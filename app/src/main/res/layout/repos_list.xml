@@ -115,6 +115,24 @@
                 android:layout_toRightOf="@id/textView_updated_at"
                 android:text="2018-04-18" />
 
+            <TextView
+                android:id="@+id/textView_login"
+                android:layout_width="wrap_content"
+                android:layout_alignBaseline="@id/btn_view_repo"
+                android:layout_height="wrap_content"
+                android:text="Owner:" />
+
+            <TextView
+                android:id="@+id/textView_login_value"
+                android:layout_width="wrap_content"
+                android:layout_alignBaseline="@id/btn_view_repo"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_toRightOf="@id/textView_login"
+                android:textStyle="italic|bold"
+                android:textColor="@color/gray_dark"
+                android:text="dipenparmar12" />
+
             <Button
                 android:layout_marginTop="10dp"
                 android:textSize="10dp"
