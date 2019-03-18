@@ -56,9 +56,9 @@ public class AdapterGitUserDetail extends RecyclerView.Adapter<AdapterGitUserDet
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textViewId= (TextView) itemView.<View>findViewById(R.id.textView_id);
-            textViewName= (TextView) itemView.<View>findViewById(R.id.textView_name);
-            textViewFullName= (TextView) itemView.<View>findViewById(R.id.textView_full_name);
+//            textViewId= (TextView) itemView.<View>findViewById(R.id.textView_id);
+//            textViewName= (TextView) itemView.<View>findViewById(R.id.textView_name);
+//            textViewFullName= (TextView) itemView.<View>findViewById(R.id.textView_full_name);
 
         }
     }
