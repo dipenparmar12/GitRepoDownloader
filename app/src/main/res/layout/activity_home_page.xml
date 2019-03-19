@@ -43,7 +43,7 @@
                 android:layout_weight="40" />
 
             <RadioGroup
-                android:id="@+id/radioGroup"
+                android:id="@+id/radioGroup_search_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/editText_qry"
@@ -68,7 +68,7 @@
                 android:id="@+id/btn_submit"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_below="@id/radioGroup"
+                android:layout_below="@id/radioGroup_search_type"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="10dp"
                 android:background="@drawable/btn_gradient"
