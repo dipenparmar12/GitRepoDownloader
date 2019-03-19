@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName;
 
 import java.security.acl.Owner;
 
-public class GitUserDetail {
+public class GitRepoDetail {
     private Integer id;
     private  String name,full_name,html_url,description,url,languages_url,contributors_url,created_at,updated_at,git_url,clone_url,svn_url,homepage,size,watchers_count,forks_count,archived,forks,watchers,default_branch;
 
-    public GitUserDetail(Integer id, String name, String full_name, String html_url, String description, String url, String languages_url, String contributors_url, String created_at, String updated_at, String git_url, String clone_url, String svn_url, String homepage, String size, String watchers_count, String forks_count, String archived, String forks, String watchers, String default_branch) {
+    public GitRepoDetail(Integer id, String name, String full_name, String html_url, String description, String url, String languages_url, String contributors_url, String created_at, String updated_at, String git_url, String clone_url, String svn_url, String homepage, String size, String watchers_count, String forks_count, String archived, String forks, String watchers, String default_branch) {
         this.id = id;
         this.name = name;
         this.full_name = full_name;
@@ -118,50 +118,3 @@ public class GitUserDetail {
     }
 
 }
-
-
-//public class GitUserDetail {
-//
-//    private Integer id;
-//    private String name,full_name,homepage,description,message,documentation_url;
-//    public GitUserDetail(Integer id, String name, String full_name, String homepage, String description) {
-//        this.id = id;
-//        this.name = name;
-//        this.full_name = full_name;
-//        this.homepage = homepage;
-//        this.description = description;
-//    }
-//
-//
-//
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public String getFull_name() {
-//        return full_name;
-//    }
-//
-//    public String getHomepage() {
-//        return homepage;
-//    }
-//
-//    public String getDescription() {
-//        return description;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "GitUserDetail{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                ", full_name='" + full_name + '\'' +
-//                '}';
-//    }
-//
-//}
-//

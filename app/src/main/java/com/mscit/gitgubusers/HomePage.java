@@ -43,7 +43,6 @@ public class HomePage extends AppCompatActivity {
                 int radioButtonId = radioGroupSearchType.getCheckedRadioButtonId();
                 selectedRadioButton = findViewById(radioButtonId);
 
-
                 Log.e("dipen","HomePage QryText :"+editText_qry.getText().toString());
 
                 intent = new Intent(getApplicationContext(), MainActivity.class);

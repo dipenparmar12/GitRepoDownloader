@@ -1,26 +1,21 @@
 package com.mscit.gitgubusers;
 
-import android.app.LauncherActivity;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.List;
 
-public class AdapterGitUserDetail extends RecyclerView.Adapter<AdapterGitUserDetail.ViewHolder> {
+public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDetail.ViewHolder> {
 
-    ArrayList<GitUserDetail> gitUserDetails;
+    ArrayList<GitRepoDetail> gitUserDetails;
     Context context;
 
-    public AdapterGitUserDetail(ArrayList<GitUserDetail> gitUserDetails, Context context) {
+    public AdapterGitRepoDetail(ArrayList<GitRepoDetail> gitUserDetails, Context context) {
         this.gitUserDetails = gitUserDetails;
         this.context = context;
     }
