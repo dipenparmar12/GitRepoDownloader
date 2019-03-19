@@ -1,0 +1,415 @@
+{
+    "id": 130059288,
+    "name": "advanced-css-course",
+    "full_name": "dipenparmar12/advanced-css-course",
+    "html_url": "https://github.com/dipenparmar12/advanced-css-course",
+    "description": "Starter files, final projects and FAQ for my Advanced CSS course",
+    "url": "https://api.github.com/repos/dipenparmar12/advanced-css-course",
+    "languages_url": "https://api.github.com/repos/dipenparmar12/advanced-css-course/languages",
+    "contributors_url": "https://api.github.com/repos/dipenparmar12/advanced-css-course/contributors",
+    "created_at": "2018-04-18T12:31:52Z",
+    "updated_at": "2018-04-18T12:31:55Z",
+    "git_url": "git://github.com/dipenparmar12/advanced-css-course.git",
+    "clone_url": "https://github.com/dipenparmar12/advanced-css-course.git",
+    "svn_url": "https://github.com/dipenparmar12/advanced-css-course",
+    "homepage": "https://www.udemy.com/advanced-css-and-sass/?couponCode=GITHUB4",
+    "size": 55913,
+    "watchers_count": 0,
+    "forks_count": 0,
+    "archived": false,
+    "forks": 0,
+    "watchers": 0,
+    "default_branch": "master"
+}
+
+
+textView_Id;
+textView_Name;
+textView_Full_name;
+textView_Html_url;
+textView_Description;
+textView_Url;
+textView_Languages_url;
+textView_Contributors_url;
+textView_Created_at;
+textView_Updated_at;
+textView_Git_url;
+textView_Clone_url;
+textView_Svn_url;
+textView_Homepage;
+textView_Size;
+textView_Watchers_count;
+textView_Forks_count;
+textView_Archived;
+textView_Forks;
+textView_Watchers;
+textView_Default_branch;
+
+
+
+getId()
+getName()
+getFull_name()
+getHtml_url()
+getDescription()
+getUrl()
+getLanguages_url()
+getContributors_url()
+getCreated_at()
+getUpdated_at()
+getGit_url()
+getClone_url()
+getSvn_url()
+getHomepage()
+getSize()
+getWatchers_count()
+getForks_count()
+getArchived()
+getForks()
+getWatchers()
+getDefault_branch()
+
+
+
+TextView = 
+textView_Id,
+textView_Name,
+textView_Full_name,
+textView_Html_url,
+textView_Description,
+textView_Url,
+textView_Languages_url,
+textView_Contributors_url,
+textView_Created_at,
+textView_Updated_at,
+textView_Git_url,
+textView_Clone_url,
+textView_Svn_url,
+textView_Homepage,
+textView_Size,
+textView_Watchers_count,
+textView_Forks_count,
+textView_Archived,
+textView_Forks,
+textView_Watchers,
+textView_Default_branch;
+
+
+
+textView_Id = (TextView) itemView.<View>findViewById(R.id.textView_Id);
+textView_Name = (TextView) itemView.<View>findViewById(R.id.textView_Name);
+textView_Full_name = (TextView) itemView.<View>findViewById(R.id.textView_Full_name);
+textView_Html_url = (TextView) itemView.<View>findViewById(R.id.textView_Html_url);
+textView_Description = (TextView) itemView.<View>findViewById(R.id.textView_Description);
+textView_Url = (TextView) itemView.<View>findViewById(R.id.textView_Url);
+textView_Languages_url = (TextView) itemView.<View>findViewById(R.id.textView_Languages_url);
+textView_Contributors_url = (TextView) itemView.<View>findViewById(R.id.textView_Contributors_url);
+textView_Created_at = (TextView) itemView.<View>findViewById(R.id.textView_Created_at);
+textView_Updated_at = (TextView) itemView.<View>findViewById(R.id.textView_Updated_at);
+textView_Git_url = (TextView) itemView.<View>findViewById(R.id.textView_Git_url);
+textView_Clone_url = (TextView) itemView.<View>findViewById(R.id.textView_Clone_url);
+textView_Svn_url = (TextView) itemView.<View>findViewById(R.id.textView_Svn_url);
+textView_Homepage = (TextView) itemView.<View>findViewById(R.id.textView_Homepage);
+textView_Size = (TextView) itemView.<View>findViewById(R.id.textView_Size);
+textView_Watchers_count = (TextView) itemView.<View>findViewById(R.id.textView_Watchers_count);
+textView_Forks_count = (TextView) itemView.<View>findViewById(R.id.textView_Forks_count);
+textView_Archived = (TextView) itemView.<View>findViewById(R.id.textView_Archived);
+textView_Forks = (TextView) itemView.<View>findViewById(R.id.textView_Forks);
+textView_Watchers = (TextView) itemView.<View>findViewById(R.id.textView_Watchers);
+textView_Default_branch = (TextView) itemView.<View>findViewById(R.id.textView_Default_branch);
+
+
+
+
+
+
+
+
+
+///////////// GIT USET Details  ////////////
+
+    login
+    id
+    node_id
+    avatar_url
+    gravatar_id
+    url
+    html_url
+    followers_url
+    following_url
+    gists_url
+    starred_url
+    subscriptions_url
+    organizations_url
+    repos_url
+    events_url
+    received_events_url
+    type
+    site_admin
+    name
+    company
+    blog
+    location
+    email
+    hireable
+    bio
+    public_repos
+    public_gists
+    followers
+    following
+    created_at
+    updated_at
+
+
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/node_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/avatar_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/gravatar_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/html_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/followers_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/following_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/gists_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/starred_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/subscriptions_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/organizations_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/repos_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/events_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/received_events_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/site_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/blog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/hireable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/public_repos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/public_gists"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/followers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/created_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/updated_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    login = findViewById(R.id.login);
+    id = findViewById(R.id.id);
+    node_id = findViewById(R.id.node_id);
+    avatar_url = findViewById(R.id.avatar_url);
+    gravatar_id = findViewById(R.id.gravatar_id);
+    url = findViewById(R.id.url);
+    html_url = findViewById(R.id.html_url);
+    followers_url = findViewById(R.id.followers_url);
+    following_url = findViewById(R.id.following_url);
+    gists_url = findViewById(R.id.gists_url);
+    starred_url = findViewById(R.id.starred_url);
+    subscriptions_url = findViewById(R.id.subscriptions_url);
+    organizations_url = findViewById(R.id.organizations_url);
+    repos_url = findViewById(R.id.repos_url);
+    events_url = findViewById(R.id.events_url);
+    received_events_url = findViewById(R.id.received_events_url);
+    type = findViewById(R.id.type);
+    site_admin = findViewById(R.id.site_admin);
+    name = findViewById(R.id.name);
+    company = findViewById(R.id.company);
+    blog = findViewById(R.id.blog);
+    location = findViewById(R.id.location);
+    email = findViewById(R.id.email);
+    hireable = findViewById(R.id.hireable);
+    bio = findViewById(R.id.bio);
+    public_repos = findViewById(R.id.public_repos);
+    public_gists = findViewById(R.id.public_gists);
+    followers = findViewById(R.id.followers);
+    following = findViewById(R.id.following);
+    created_at = findViewById(R.id.created_at);
+    updated_at = findViewById(R.id.updated_at);
+
+
+////////  GitUserDetail Getter Methods /////////
+    getLogin()
+    getId()
+    getNode_id()
+    getAvatar_url()
+    getGravatar_id()
+    getUrl()
+    getHtml_url()
+    getFollowers_url()
+    getFollowing_url()
+    getGists_url()
+    getStarred_url()
+    getSubscriptions_url()
+    getOrganizations_url()
+    getRepos_url()
+    getEvents_url()
+    getReceived_events_url()
+    getType()
+    getSite_admin()
+    getName()
+    getCompany()
+    getBlog()
+    getLocation()
+    getEmail()
+    getHireable()
+    getBio()
+    getPublic_repos()
+    getPublic_gists()
+    getFollowers()
+    getFollowing()
+    getCreated_at()
+    getUpdated_at()

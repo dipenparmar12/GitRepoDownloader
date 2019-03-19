@@ -1,0 +1,12 @@
+
+ * URL: https://api.github.com/
+ * https://api.github.com/users/{user}
+ * https://api.github.com/users/{user}/repos
+
+ * URL: https://api.github.com/
+ * https://api.github.com/users/taylorotwell
+ * https://api.github.com/users/taylorotwell/repos
+
+ * https://api.github.com/search/repositories?q=flexsass
+ * https://api.github.com/repos/dipenparmar12/FlexSass
+
