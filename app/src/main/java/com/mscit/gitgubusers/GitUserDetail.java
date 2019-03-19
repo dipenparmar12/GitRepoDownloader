@@ -7,10 +7,12 @@ import java.security.acl.Owner;
 
 public class GitUserDetail {
     private Integer id;
-    private String name;
-    private String full_name;
-    private String homepage;
-    private String description;
+    private String name,full_name,homepage,description,message,documentation_url;
+
+    public GitUserDetail(String message, String documentation_url) {
+        this.message = message;
+        this.documentation_url = documentation_url;
+    }
 
     public GitUserDetail(Integer id, String name, String full_name, String homepage, String description) {
         this.id = id;
@@ -19,6 +21,7 @@ public class GitUserDetail {
         this.homepage = homepage;
         this.description = description;
     }
+
 
     public Integer getId() {
         return id;

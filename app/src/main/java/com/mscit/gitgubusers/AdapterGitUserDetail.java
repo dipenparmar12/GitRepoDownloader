@@ -38,9 +38,9 @@ public class AdapterGitUserDetail extends RecyclerView.Adapter<AdapterGitUserDet
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-        viewHolder.textViewId.setText(gitUserDetails.get(i).getId() + ".");
+//        viewHolder.textViewId.setText(gitUserDetails.get(i).getId() + ".");
         viewHolder.textViewName.setText(gitUserDetails.get(i).getName());
-        viewHolder.textViewFullName.setText(gitUserDetails.get(i).getFull_name());
+//        viewHolder.textViewFullName.setText(gitUserDetails.get(i).getFull_name());
 
 //        viewHolder.textView_name.setText(gitUserDetails.get(i).getName());
 //        viewHolder.textView_size_value_value.setText(gitUserDetails.get(i).getName_value());
@@ -76,17 +76,16 @@ public class AdapterGitUserDetail extends RecyclerView.Adapter<AdapterGitUserDet
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textView_name = (TextView) itemView.<View>findViewById(R.id.textView_name);
-            textView_size_value = (TextView) itemView.<View>findViewById(R.id.textView_size_value);
-            textView_watchers_value = (TextView) itemView.<View>findViewById(R.id.textView_watchers_value);
-            textView_forks_value = (TextView) itemView.<View>findViewById(R.id.textView_forks_value);
-            textView_created_at_value = (TextView) itemView.<View>findViewById(R.id.textView_created_at_value);
-            textView_updated_at_value = (TextView) itemView.<View>findViewById(R.id.textView_updated_at_value);
-            textView_login_value = (TextView) itemView.<View>findViewById(R.id.textView_login_value);
+//            textView_name = (TextView) itemView.<View>findViewById(R.id.textView_name);
+//            textView_size_value = (TextView) itemView.<View>findViewById(R.id.textView_size_value);
+//            textView_watchers_value = (TextView) itemView.<View>findViewById(R.id.textView_watchers_value);
+//            textView_forks_value = (TextView) itemView.<View>findViewById(R.id.textView_forks_value);
+//            textView_created_at_value = (TextView) itemView.<View>findViewById(R.id.textView_created_at_value);
+//            textView_updated_at_value = (TextView) itemView.<View>findViewById(R.id.textView_updated_at_value);
+//            textView_login_value = (TextView) itemView.<View>findViewById(R.id.textView_login_value);
 
-            textViewId= (TextView) itemView.<View>findViewById(R.id.textView_id);
+//            textViewId= (TextView) itemView.<View>findViewById(R.id.textView_id);
             textViewName= (TextView) itemView.<View>findViewById(R.id.textView_name);
-            textViewFullName= (TextView) itemView.<View>findViewById(R.id.textView_full_name);
 
         }
     }

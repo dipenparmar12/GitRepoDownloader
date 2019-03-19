@@ -3,6 +3,7 @@ package com.mscit.gitgubusers;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -39,17 +40,15 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                intent = new Intent(getApplicationContext(),MainActivity.class);
-//                startActivity(intent);
-
                 int radioButtonId = radioGroupSearchType.getCheckedRadioButtonId();
-
                 selectedRadioButton = findViewById(radioButtonId);
 
-                Toast.makeText(getApplicationContext(), "HomePage:" + selectedRadioButton.getId(), Toast.LENGTH_SHORT).show();
+
+                Log.e("dipen","HomePage QryText :"+editText_qry.getText().toString());
 
                 intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.putExtra("radioGroupSearchType",selectedRadioButton.getText());
+                intent.putExtra("textViewSearchQry",editText_qry.getText().toString());
                 startActivity(intent);
 
             }

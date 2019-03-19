@@ -1,10 +1,14 @@
 package com.mscit.gitgubusers;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +38,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Callback<ArrayList<GitUserDetail>> {
 
 
 //    protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +54,19 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
+    ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.git_user_profile_ui);
+        setContentView(R.layout.activity_main);
 
-        String serach_qry = getIntent().getExtras().getString("radioGroupSearchType");
 
-        Log.e(TAG, "onCreate():");
+//        String radioGroupSearchType = getIntent().getExtras().getString("radioGroupSearchType");
+        String serach_qry = getIntent().getExtras().getString("textViewSearchQry");
+
+        Log.e(TAG, "onCreate():+Qry: " + serach_qry);
+
         retrofit = new Retrofit.Builder()
                 .baseUrl(GitUserApi.URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -66,31 +75,47 @@ public class MainActivity extends AppCompatActivity {
         GitUserApi gitUserApi = retrofit.create(GitUserApi.class);
 
 //        Call<ArrayList<GitUserDetail>> call = gitUserApi.GitUserDetail();
-        Call<ArrayList<GitUserDetail>> call = gitUserApi.GitUserDetail("dipenparmar12");
+        Call<ArrayList<GitUserDetail>> call = gitUserApi.GitUserDetail(serach_qry);
 
-        call.enqueue(new Callback<ArrayList<GitUserDetail>>() {
-            @Override
-            public void onResponse(Call<ArrayList<GitUserDetail>> call, Response<ArrayList<GitUserDetail>> response) {
-                Log.e(TAG, "onResponse:");
-
-                ArrayList<GitUserDetail> gitUserDetails = response.body();
-                Log.e(TAG, ":"+response.body().toString());
-
-                recyclerView = findViewById(R.id.recyclerViewGiUser);
-                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                adapter = new AdapterGitUserDetail(gitUserDetails,getApplicationContext());
-                recyclerView.setAdapter(adapter);
-
-            }
-
-            @Override
-            public void onFailure(Call<ArrayList<GitUserDetail>> call, Throwable t) {
-                Log.e(TAG, "onFailure(): " );
-                Log.e(TAG, t.toString());
-            }
-        });
+        call.enqueue(this);
 
     }
 
+//    @Override
+//    public void onResponse(Call<ArrayList<GitUserDetail>> call, Response<ArrayList<GitUserDetail>> response) {
+//        Log.e(TAG, "onResponse:" + response.body().toString());
+//        ArrayList<GitUserDetail> gitUserDetails = response.body();
+//        recyclerView = findViewById(R.id.recyclerViewGiUser);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+//
+//        adapter = new AdapterGitUserDetail(gitUserDetails, getApplicationContext());
+//        recyclerView.setAdapter(adapter);
+//
+//        ProgressBar progressBar = findViewById(R.id.progressBar1);
+//        progressBar.setVisibility(View.INVISIBLE);
+//    }
 
+    @Override
+    public void onResponse(Call call, Response response) {
+        Log.e(TAG, "onResponse:" + call );
+
+        ArrayList<GitUserDetail> gitUserDetails = new ArrayList<GitUserDetail>();
+        gitUserDetails = (ArrayList<GitUserDetail>) response.body();
+
+        recyclerView = findViewById(R.id.recyclerViewGiUser);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+        adapter = new AdapterGitUserDetail(gitUserDetails, getApplicationContext());
+        recyclerView.setAdapter(adapter);
+
+        progressBar = findViewById(R.id.progressBar1);
+        progressBar.setVisibility(View.INVISIBLE);
+    }
+
+
+    @Override
+    public void onFailure(Call<ArrayList<GitUserDetail>> call, Throwable t) {
+        Log.e(TAG, "onFailure(): ");
+        Log.e(TAG, t.toString());
+    }
 }

@@ -144,20 +144,7 @@
                 android:background="@drawable/btn_gradient"
                 android:text="View Repo" />
 
-
         </RelativeLayout>
-
-        <TextView
-            android:text="Temp"
-            android:id="@+id/textView_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:text="TempTwo"
-            android:id="@+id/textView_full_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
 
     </android.support.v7.widget.CardView>
