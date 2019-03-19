@@ -97,17 +97,29 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
 
     @Override
     public void onResponse(Call call, Response response) {
-        Log.e(TAG, "onResponse:" + call );
+        Log.e(TAG, "onResponse:" + response);
 
-        ArrayList<GitUserDetail> gitUserDetails = new ArrayList<GitUserDetail>();
-        gitUserDetails = (ArrayList<GitUserDetail>) response.body();
 
-        recyclerView = findViewById(R.id.recyclerViewGiUser);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        if (response.body() == null) {
+            Log.e(TAG, "userNotFound:" + response.body());
+            Intent intent = new Intent(getApplicationContext(), HomePage.class);
+            startActivity(intent);
+            Toast.makeText(getApplicationContext(), "User not Found", Toast.LENGTH_SHORT).show();
+        } else {
 
-        adapter = new AdapterGitUserDetail(gitUserDetails, getApplicationContext());
-        recyclerView.setAdapter(adapter);
+            Log.e(TAG, "userFound:" + response.body());
 
+            ArrayList<GitUserDetail> gitUserDetails = new ArrayList<GitUserDetail>();
+            gitUserDetails = (ArrayList<GitUserDetail>) response.body();
+
+            recyclerView = findViewById(R.id.recyclerViewGiUser);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+            adapter = new AdapterGitUserDetail(gitUserDetails, getApplicationContext());
+            recyclerView.setAdapter(adapter);
+        }
+
+//
         progressBar = findViewById(R.id.progressBar1);
         progressBar.setVisibility(View.INVISIBLE);
     }
