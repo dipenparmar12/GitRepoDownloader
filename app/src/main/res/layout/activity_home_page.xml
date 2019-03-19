@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView_serach"
                 android:layout_weight="40"
-                android:text="taylorotwell" />
+                android:text="dipenparmar12" />
 
             <!--nirajparmar68,dipenparmar12-->
 
@@ -59,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="UserId" />
+                    android:text="ByUserId" />
 
                 <RadioButton
                     android:id="@+id/radioButton_repos"

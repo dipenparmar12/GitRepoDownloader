@@ -9,14 +9,14 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity {
 
     TextView editText_qry;
 
     RadioGroup radioGroupSearchType;
-    RadioButton selectedRadioButton, radioButton_users, radioButton_repos;
-
+    RadioButton selectedRadioButton;
     Button btn_submit;
 
     Intent intent;
@@ -30,9 +30,6 @@ public class HomePage extends AppCompatActivity {
         btn_submit = findViewById(R.id.btn_submit);
 
         radioGroupSearchType = findViewById(R.id.radioGroup_search_type);
-//        radioButton_users = findViewById(R.id.radioButton_users);
-//        radioButton_repos = findViewById(R.id.radioButton_repos);
-
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,17 +40,20 @@ public class HomePage extends AppCompatActivity {
 
                 Log.e("dipen","HomePage QryText :"+editText_qry.getText().toString());
 
-                intent = new Intent(getApplicationContext(), GitRepoDetailActivity.class);
-                intent.putExtra("radioGroupSearchType",selectedRadioButton.getText());
-                intent.putExtra("textViewSearchQry",editText_qry.getText().toString());
-                startActivity(intent);
+                if("ByUserId".equals(selectedRadioButton.getText().toString()) ){
+                    intent = new Intent(getApplicationContext(), GitUserDetailActivity.class);
+                    intent.putExtra("textViewSearchQry",editText_qry.getText().toString());
+                    startActivity(intent);
+                }else{
+                    intent = new Intent(getApplicationContext(), GitRepoDetailActivity.class);
+                    intent.putExtra("textViewSearchQry",editText_qry.getText().toString());
+                    startActivity(intent);
+                }
+
+
             }
         });
 
-//        if(getIntent().getExtras().getString("textViewSearchQry").toString()){
-//            editText_qry.setText(getIntent().getExtras().getString("textViewSearchQry"));
-//        }
-        
-
     }
+
 }
