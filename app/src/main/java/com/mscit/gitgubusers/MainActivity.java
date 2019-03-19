@@ -40,7 +40,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity implements Callback<ArrayList<GitUserDetail>> {
 
-
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
 //        setContentView(R.layout.repos_list);
@@ -50,30 +49,29 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
 
     Retrofit retrofit;
     GitUserDetail gitUserDetail;
-    String serach_qry;
+    String serach_qry,radioGroupSearchType;
+    ProgressBar progressBar;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        String radioGroupSearchType = getIntent().getExtras().getString("radioGroupSearchType");
+        radioGroupSearchType = getIntent().getExtras().getString("radioGroupSearchType");
         serach_qry = getIntent().getExtras().getString("textViewSearchQry");
 
-        Log.e(TAG, "onCreate():+Qry: " + serach_qry);
+        recyclerView = findViewById(R.id.recyclerViewGiUser);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-        retrofit = new Retrofit.Builder()
-                .baseUrl(GitUserApi.URL)
+        retrofit = new Retrofit.Builder().baseUrl(GitUserApi.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        GitUserApi gitUserApi = retrofit.create(GitUserApi.class);
 
-//        Call<ArrayList<GitUserDetail>> call = gitUserApi.GitUserDetail();
+        GitUserApi gitUserApi = retrofit.create(GitUserApi.class);
         Call<ArrayList<GitUserDetail>> call = gitUserApi.GitUserDetail(serach_qry);
 
         call.enqueue(this);
@@ -101,22 +99,14 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
         if (response.body() == null) {
             Log.e(TAG, "userNotFound:" + response.body());
 
-//            Intent intent = new Intent(getApplicationContext(), HomePage.class);
-//            intent.putExtra("textViewSearchQry",serach_qry);
-//            startActivity(intent);
-
-            startActivity(new Intent(getApplicationContext(), HomePage.class).putExtra("textViewSearchQry",serach_qry));
-            Toast.makeText(getApplicationContext(), "User not Found", Toast.LENGTH_SHORT).show();
+            getApplicationContext().startActivity(new Intent(getApplicationContext(), HomePage.class).putExtra("textViewSearchQry",serach_qry));
+            Toast.makeText(getApplicationContext(), serach_qry+" :User NotFound:", Toast.LENGTH_SHORT).show();
 
         } else {
-
             Log.e(TAG, "userFound:" + response.body());
 
             ArrayList<GitUserDetail> gitUserDetails = new ArrayList<GitUserDetail>();
             gitUserDetails = (ArrayList<GitUserDetail>) response.body();
-
-            recyclerView = findViewById(R.id.recyclerViewGiUser);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
             adapter = new AdapterGitUserDetail(gitUserDetails, getApplicationContext());
             recyclerView.setAdapter(adapter);
@@ -125,12 +115,14 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
 
         progressBar = findViewById(R.id.progressBar1);
         progressBar.setVisibility(View.INVISIBLE);
-    }
 
+    }
 
     @Override
     public void onFailure(Call<ArrayList<GitUserDetail>> call, Throwable t) {
         Log.e(TAG, "onFailure(): ");
         Log.e(TAG, t.toString());
     }
+
+
 }
