@@ -19,24 +19,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
-
-/*
-
- * URL: https://api.github.com/
- * https://api.github.com/users/{user}
- * https://api.github.com/users/{user}/repos
-
- * URL: https://api.github.com/
- * https://api.github.com/users/taylorotwell
- * https://api.github.com/users/taylorotwell/repos
-
- * https://api.github.com/search/repositories?q=flexsass
- * https://api.github.com/repos/dipenparmar12/FlexSass
-
- */
-
-public class MainActivity extends AppCompatActivity implements  Callback {
+public class GitUserDetailActivity extends AppCompatActivity implements  Callback {
 
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -165,54 +148,5 @@ public class MainActivity extends AppCompatActivity implements  Callback {
     public void onFailure(Call call, Throwable t) {
         Log.e(TAG, "FAILED :" + t.toString());
     }
-
-
-//    @Override
-//    public void onRespons//        Log.e(TAG, "onResponse:" + response.body().toString());e(Call<ArrayList<GitRepoDetail>> call, Response<ArrayList<GitRepoDetail>> response) {
-
-//        ArrayList<GitRepoDetail> gitUserDetails = response.body();
-//        recyclerView = findViewById(R.id.recyclerViewGiUser);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-//
-//        adapter = new AdapterGitRepoDetail(gitUserDetails, getApplicationContext());
-//        recyclerView.setAdapter(adapter);
-//
-//        ProgressBar progressBar = findViewById(R.id.progressBar1);
-//        progressBar.setVisibility(View.INVISIBLE);
-//    }
-
-//
-//    @Override
-//    public void onResponse(Call call, Response response) {
-//        Log.e(TAG, "onResponse:" + response);
-//
-//        if (response.body() == null) {
-//            Log.e(TAG, "userNotFound:" + response.body());
-//
-//            getApplicationContext().startActivity(new Intent(getApplicationContext(), HomePage.class).putExtra("textViewSearchQry",serach_qry));
-//            Toast.makeText(getApplicationContext(), serach_qry+" :User NotFound:", Toast.LENGTH_SHORT).show();
-//
-//        } else {
-//            Log.e(TAG, "userFound:" + response.body());
-//
-////            ArrayList<GitRepoDetail> gitUserDetails = new ArrayList<GitRepoDetail>();
-////            gitUserDetails = (ArrayList<GitRepoDetail>) response.body();
-////
-////            adapter = new AdapterGitRepoDetail(gitUserDetails, getApplicationContext());
-////            recyclerView.setAdapter(adapter);
-//
-//        }
-//
-//        progressBar = findViewById(R.id.progressBar1);
-//        progressBar.setVisibility(View.INVISIBLE);
-//
-//    }
-//
-//    @Override
-//    public void onFailure(Call call, Throwable t) {
-//        Log.e(TAG, "onFailure(): ");
-//        Log.e(TAG, t.toString());
-//    }
-
 
 }

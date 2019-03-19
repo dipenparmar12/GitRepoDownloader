@@ -8,9 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity {
 
@@ -45,7 +43,7 @@ public class HomePage extends AppCompatActivity {
 
                 Log.e("dipen","HomePage QryText :"+editText_qry.getText().toString());
 
-                intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent = new Intent(getApplicationContext(), GitRepoDetailActivity.class);
                 intent.putExtra("radioGroupSearchType",selectedRadioButton.getText());
                 intent.putExtra("textViewSearchQry",editText_qry.getText().toString());
                 startActivity(intent);
