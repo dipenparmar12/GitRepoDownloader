@@ -1,0 +1,121 @@
+{
+    "id": 130059288,
+    "name": "advanced-css-course",
+    "full_name": "dipenparmar12/advanced-css-course",
+    "html_url": "https://github.com/dipenparmar12/advanced-css-course",
+    "description": "Starter files, final projects and FAQ for my Advanced CSS course",
+    "url": "https://api.github.com/repos/dipenparmar12/advanced-css-course",
+    "languages_url": "https://api.github.com/repos/dipenparmar12/advanced-css-course/languages",
+    "contributors_url": "https://api.github.com/repos/dipenparmar12/advanced-css-course/contributors",
+    "created_at": "2018-04-18T12:31:52Z",
+    "updated_at": "2018-04-18T12:31:55Z",
+    "git_url": "git://github.com/dipenparmar12/advanced-css-course.git",
+    "clone_url": "https://github.com/dipenparmar12/advanced-css-course.git",
+    "svn_url": "https://github.com/dipenparmar12/advanced-css-course",
+    "homepage": "https://www.udemy.com/advanced-css-and-sass/?couponCode=GITHUB4",
+    "size": 55913,
+    "watchers_count": 0,
+    "forks_count": 0,
+    "archived": false,
+    "forks": 0,
+    "watchers": 0,
+    "default_branch": "master"
+}
+
+
+textView_Id;
+textView_Name;
+textView_Full_name;
+textView_Html_url;
+textView_Description;
+textView_Url;
+textView_Languages_url;
+textView_Contributors_url;
+textView_Created_at;
+textView_Updated_at;
+textView_Git_url;
+textView_Clone_url;
+textView_Svn_url;
+textView_Homepage;
+textView_Size;
+textView_Watchers_count;
+textView_Forks_count;
+textView_Archived;
+textView_Forks;
+textView_Watchers;
+textView_Default_branch;
+
+
+
+getId()
+getName()
+getFull_name()
+getHtml_url()
+getDescription()
+getUrl()
+getLanguages_url()
+getContributors_url()
+getCreated_at()
+getUpdated_at()
+getGit_url()
+getClone_url()
+getSvn_url()
+getHomepage()
+getSize()
+getWatchers_count()
+getForks_count()
+getArchived()
+getForks()
+getWatchers()
+getDefault_branch()
+
+
+
+TextView = 
+textView_Id,
+textView_Name,
+textView_Full_name,
+textView_Html_url,
+textView_Description,
+textView_Url,
+textView_Languages_url,
+textView_Contributors_url,
+textView_Created_at,
+textView_Updated_at,
+textView_Git_url,
+textView_Clone_url,
+textView_Svn_url,
+textView_Homepage,
+textView_Size,
+textView_Watchers_count,
+textView_Forks_count,
+textView_Archived,
+textView_Forks,
+textView_Watchers,
+textView_Default_branch;
+
+
+
+textView_Id = (TextView) itemView.<View>findViewById(R.id.textView_Id);
+textView_Name = (TextView) itemView.<View>findViewById(R.id.textView_Name);
+textView_Full_name = (TextView) itemView.<View>findViewById(R.id.textView_Full_name);
+textView_Html_url = (TextView) itemView.<View>findViewById(R.id.textView_Html_url);
+textView_Description = (TextView) itemView.<View>findViewById(R.id.textView_Description);
+textView_Url = (TextView) itemView.<View>findViewById(R.id.textView_Url);
+textView_Languages_url = (TextView) itemView.<View>findViewById(R.id.textView_Languages_url);
+textView_Contributors_url = (TextView) itemView.<View>findViewById(R.id.textView_Contributors_url);
+textView_Created_at = (TextView) itemView.<View>findViewById(R.id.textView_Created_at);
+textView_Updated_at = (TextView) itemView.<View>findViewById(R.id.textView_Updated_at);
+textView_Git_url = (TextView) itemView.<View>findViewById(R.id.textView_Git_url);
+textView_Clone_url = (TextView) itemView.<View>findViewById(R.id.textView_Clone_url);
+textView_Svn_url = (TextView) itemView.<View>findViewById(R.id.textView_Svn_url);
+textView_Homepage = (TextView) itemView.<View>findViewById(R.id.textView_Homepage);
+textView_Size = (TextView) itemView.<View>findViewById(R.id.textView_Size);
+textView_Watchers_count = (TextView) itemView.<View>findViewById(R.id.textView_Watchers_count);
+textView_Forks_count = (TextView) itemView.<View>findViewById(R.id.textView_Forks_count);
+textView_Archived = (TextView) itemView.<View>findViewById(R.id.textView_Archived);
+textView_Forks = (TextView) itemView.<View>findViewById(R.id.textView_Forks);
+textView_Watchers = (TextView) itemView.<View>findViewById(R.id.textView_Watchers);
+textView_Default_branch = (TextView) itemView.<View>findViewById(R.id.textView_Default_branch);
+
+

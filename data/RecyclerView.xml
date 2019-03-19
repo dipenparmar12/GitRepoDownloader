@@ -12,16 +12,16 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
+            android:padding="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:orientation="vertical">
 
             <TextView
+                android:layout_marginBottom="10dp"
                 android:id="@+id/textView_Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:text="FlexSass AdvanceCss"
                 android:textColor="@color/purple_light"
                 android:textSize="20dp" />
@@ -104,8 +104,7 @@
                 android:layout_below="@id/textView_size"
                 android:layout_marginEnd="3dp"
                 android:layout_toRightOf="@id/textView_Created_at"
-                android:text="updated_at:"
-                android:visibility="gone" />
+                android:text="updated_at:" />
 
             <TextView
                 android:id="@+id/textView_Updated_at"
@@ -114,136 +113,40 @@
                 android:layout_below="@id/textView_size"
                 android:layout_marginEnd="15dp"
                 android:layout_toRightOf="@id/textView_updated_at"
-                android:text="2018-04-18"
-                android:visibility="gone" />
+                android:text="2018-04-18" />
 
             <TextView
                 android:id="@+id/textView_login"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_alignBaseline="@id/btn_view_repo"
+                android:layout_height="wrap_content"
                 android:text="Owner:" />
 
             <TextView
                 android:id="@+id/textView_login_value"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_alignBaseline="@id/btn_view_repo"
-                android:layout_marginEnd="3dp"
-                android:layout_toRightOf="@id/textView_login"
-                android:text="dipenparmar12"
-                android:textColor="@color/gray_dark"
-                android:textStyle="italic|bold" />
-
-            <TextView
-                android:id="@+id/textView_Id"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@id/btn_view_repo"
                 android:layout_marginEnd="15dp"
-                android:layout_toRightOf="@id/textView_login_value"
-                android:text=""
+                android:layout_toRightOf="@id/textView_login"
+                android:textStyle="italic|bold"
                 android:textColor="@color/gray_dark"
-                android:textStyle="italic|bold" />
+                android:text="dipenparmar12" />
 
             <Button
+                android:layout_marginTop="10dp"
+                android:textSize="10dp"
                 android:id="@+id/btn_view_repo"
                 android:layout_width="100dp"
                 android:layout_height="25dp"
                 android:layout_below="@id/textView_created_at"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
+                android:layout_alignRight="@id/textView_Updated_at"
                 android:background="@drawable/btn_gradient"
-                android:text="View Repo"
-                android:textSize="10dp" />
+                android:text="View Repo" />
 
         </RelativeLayout>
 
+
     </android.support.v7.widget.CardView>
-
-
-    <TextView
-        android:id="@+id/textView_Full_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Html_url"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Url"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Languages_url"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Contributors_url"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Git_url"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Clone_url"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Svn_url"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Homepage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Watchers_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Forks_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Archived"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/textView_Default_branch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
 
 </LinearLayout>

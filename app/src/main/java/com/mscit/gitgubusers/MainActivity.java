@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
 //        setContentView(R.layout.repos_list);
 //    }
 
+    final String TAG = "dipen";
 
     Retrofit retrofit;
     GitUserDetail gitUserDetail;
-    final String TAG = "dipen";
-
+    String serach_qry;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
@@ -61,9 +61,8 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
 //        String radioGroupSearchType = getIntent().getExtras().getString("radioGroupSearchType");
-        String serach_qry = getIntent().getExtras().getString("textViewSearchQry");
+        serach_qry = getIntent().getExtras().getString("textViewSearchQry");
 
         Log.e(TAG, "onCreate():+Qry: " + serach_qry);
 
@@ -99,12 +98,16 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
     public void onResponse(Call call, Response response) {
         Log.e(TAG, "onResponse:" + response);
 
-
         if (response.body() == null) {
             Log.e(TAG, "userNotFound:" + response.body());
-            Intent intent = new Intent(getApplicationContext(), HomePage.class);
-            startActivity(intent);
+
+//            Intent intent = new Intent(getApplicationContext(), HomePage.class);
+//            intent.putExtra("textViewSearchQry",serach_qry);
+//            startActivity(intent);
+
+            startActivity(new Intent(getApplicationContext(), HomePage.class).putExtra("textViewSearchQry",serach_qry));
             Toast.makeText(getApplicationContext(), "User not Found", Toast.LENGTH_SHORT).show();
+
         } else {
 
             Log.e(TAG, "userFound:" + response.body());
@@ -117,9 +120,9 @@ public class MainActivity extends AppCompatActivity implements Callback<ArrayLis
 
             adapter = new AdapterGitUserDetail(gitUserDetails, getApplicationContext());
             recyclerView.setAdapter(adapter);
+
         }
 
-//
         progressBar = findViewById(R.id.progressBar1);
         progressBar.setVisibility(View.INVISIBLE);
     }

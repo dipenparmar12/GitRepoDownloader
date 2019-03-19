@@ -50,10 +50,13 @@ public class HomePage extends AppCompatActivity {
                 intent.putExtra("radioGroupSearchType",selectedRadioButton.getText());
                 intent.putExtra("textViewSearchQry",editText_qry.getText().toString());
                 startActivity(intent);
-
             }
         });
 
+//        if(getIntent().getExtras().getString("textViewSearchQry").toString()){
+//            editText_qry.setText(getIntent().getExtras().getString("textViewSearchQry"));
+//        }
+        
 
     }
 }
