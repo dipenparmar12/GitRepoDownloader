@@ -1,9 +1,11 @@
 package com.mscit.gitgubusers;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +31,7 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.repos_list, viewGroup, false);
 
-        return new ViewHolder(v);
+        return new ViewHolder(v,context,gitUserDetails);
     }
 
     @Override
@@ -64,34 +66,24 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
         return gitUserDetails.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView
-                textView_Id,
-                textView_Name,
-                textView_Full_name,
-                textView_Html_url,
-                textView_Description,
-                textView_Url,
-                textView_Languages_url,
-                textView_Contributors_url,
-                textView_Created_at,
-                textView_Updated_at,
-                textView_Git_url,
-                textView_Clone_url,
-                textView_Svn_url,
-                textView_Homepage,
-                textView_Size,
-                textView_Watchers_count,
-                textView_Forks_count,
-                textView_Archived,
-                textView_Forks,
-                textView_Watchers,
-                textView_Default_branch;
+        TextView textView_Id,textView_Name,textView_Full_name,textView_Html_url,textView_Description,
+                textView_Url,textView_Languages_url,textView_Contributors_url,textView_Created_at,
+                textView_Updated_at,textView_Git_url,textView_Clone_url,textView_Svn_url,textView_Homepage,
+                textView_Size,textView_Watchers_count,textView_Forks_count,textView_Archived,textView_Forks,
+                textView_Watchers,textView_Default_branch;
 
+        ArrayList<GitRepoDetail> gitRepoDetails = new ArrayList<GitRepoDetail>();
+        Context context;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView,Context context,ArrayList<GitRepoDetail> gitRepoDetails) {
             super(itemView);
+
+            this.context = context;
+            this.gitRepoDetails = gitRepoDetails;
+
+            itemView.setOnClickListener(this);
 
             textView_Id = (TextView) itemView.<View>findViewById(R.id.textView_Id);
             textView_Name = (TextView) itemView.<View>findViewById(R.id.textView_Name);
@@ -117,6 +109,17 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
 
         }
 
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            GitRepoDetail gitRepoDetails = this.gitRepoDetails.get(position);
+
+            Log.d("dipen", "onClick: "+gitRepoDetails.getName());
+            Toast.makeText(context, ""+gitRepoDetails.getName(), Toast.LENGTH_SHORT).show();
+
+            context.startActivity(new Intent(this.context,HomePage.class));
+
+        }
     }
 
 
