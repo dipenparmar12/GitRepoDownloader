@@ -65,9 +65,9 @@ public class GitRepoDetailActivity extends AppCompatActivity implements Callback
         Log.e(TAG, "onResponse_ResponseObject: " + response);
 
         if(response.isSuccessful() ){
-            if (response.body() == null) {
-                Log.e(TAG, "userNotFound:" + response.body());
+            Log.e(TAG, "userNotFound:" + response.body());
 
+            if (response.body() == null) {
                 Toast.makeText(getApplicationContext(), serach_qry+":Repository NotFound:", Toast.LENGTH_SHORT).show();
                 getApplicationContext().startActivity(new Intent(getApplicationContext(), HomePage.class).putExtra("textViewSearchQry",serach_qry));
 

@@ -65,10 +65,10 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
     public void onResponse(Call call, Response response) {
 
         if (response.isSuccessful()) {
+            Log.e(TAG, "userNotFound:" + response.body());
 
             // Response Error Hander Condition
             if (response.body() == null) {
-                Log.e(TAG, "userNotFound:" + response.body());
 
                 // IF Response not Found , Redirected to HomePage Back with Toast Msg (intent)
                 Toast.makeText(getApplicationContext(), serach_qry + " :User NotFound:", Toast.LENGTH_SHORT).show();

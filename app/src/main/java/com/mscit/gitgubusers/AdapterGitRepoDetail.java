@@ -1,12 +1,14 @@
 package com.mscit.gitgubusers;
 
 import android.content.Context;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -33,11 +35,7 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-//        viewHolder.textViewId.setText(gitUserDetails.get(i).getId() + ".");
-//        viewHolder.textViewName.setText(gitUserDetails.get(i).getName());
-//        viewHolder.textViewFullName.setText(gitUserDetails.get(i).getFull_name());
-
-        viewHolder.textView_Id.setText(gitUserDetails.get(i).getId()+"");
+        viewHolder.textView_Id.setText(gitUserDetails.get(i).getId() + "");
         viewHolder.textView_Name.setText(gitUserDetails.get(i).getName());
         viewHolder.textView_Full_name.setText(gitUserDetails.get(i).getFull_name());
         viewHolder.textView_Html_url.setText(gitUserDetails.get(i).getHtml_url());
@@ -69,32 +67,27 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView
-            textView_Id,
-            textView_Name,
-            textView_Full_name,
-            textView_Html_url,
-            textView_Description,
-            textView_Url,
-            textView_Languages_url,
-            textView_Contributors_url,
-            textView_Created_at,
-            textView_Updated_at,
-            textView_Git_url,
-            textView_Clone_url,
-            textView_Svn_url,
-            textView_Homepage,
-            textView_Size,
-            textView_Watchers_count,
-            textView_Forks_count,
-            textView_Archived,
-            textView_Forks,
-            textView_Watchers,
-            textView_Default_branch;
-
-
-        TextView textViewFullName,
-                textViewName,
-                textViewId;
+                textView_Id,
+                textView_Name,
+                textView_Full_name,
+                textView_Html_url,
+                textView_Description,
+                textView_Url,
+                textView_Languages_url,
+                textView_Contributors_url,
+                textView_Created_at,
+                textView_Updated_at,
+                textView_Git_url,
+                textView_Clone_url,
+                textView_Svn_url,
+                textView_Homepage,
+                textView_Size,
+                textView_Watchers_count,
+                textView_Forks_count,
+                textView_Archived,
+                textView_Forks,
+                textView_Watchers,
+                textView_Default_branch;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -122,10 +115,8 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
             textView_Watchers = (TextView) itemView.<View>findViewById(R.id.textView_Watchers);
             textView_Default_branch = (TextView) itemView.<View>findViewById(R.id.textView_Default_branch);
 
-//            textViewId= (TextView) itemView.<View>findViewById(R.id.textView_id);
-//            textViewName= (TextView) itemView.<View>findViewById(R.id.textView_name);
-
         }
+
     }
 
 
