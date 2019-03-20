@@ -30,7 +30,10 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.git_user_profile_ui);
 
-//        serach_qry = getIntent().getExtras().getString("textViewSearchQry");
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            serach_qry = getIntent().getExtras().getString("textViewSearchQry");
+        }
 
         retrofit = new Retrofit.Builder().baseUrl(GitApi.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -39,7 +42,7 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
         gitApi = retrofit.create(GitApi.class);
 
         // Passing SearchQRy to GitAPi ( prepering data For Sending Request )
-        Call<GitUserDetail> call_GitUserDetail = gitApi.getUserDetail("dipenparmar12"); // set to serach_qry
+        Call<GitUserDetail> call_GitUserDetail = gitApi.getUserDetail(serach_qry); // set to serach_qry
         call_GitUserDetail.enqueue(this);
 
 
