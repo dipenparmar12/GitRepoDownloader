@@ -2,17 +2,19 @@ package com.mscit.gitgubusers;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import javax.security.auth.login.LoginException;
 
 public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDetail.ViewHolder> {
 
@@ -22,7 +24,8 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
     public AdapterGitRepoDetail(ArrayList<GitRepoDetail> gitUserDetails, Context context) {
         this.gitUserDetails = gitUserDetails;
         this.context = context;
-    }
+    } // AdapterGitRepoDetail() Constructor
+
 
     @NonNull
     @Override
@@ -31,11 +34,17 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.repos_list, viewGroup, false);
 
+        // onClick Event on Recycler View
         return new ViewHolder(v,context,gitUserDetails);
-    }
+
+        // onClick Event on Recycler View
+        // return new ViewHolder(v);
+
+    } // onCreateViewHolder();
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
+
 
         viewHolder.textView_Id.setText(gitUserDetails.get(i).getId() + "");
         viewHolder.textView_Name.setText(gitUserDetails.get(i).getName());
@@ -59,12 +68,23 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
         viewHolder.textView_Watchers.setText(gitUserDetails.get(i).getWatchers());
         viewHolder.textView_Default_branch.setText(gitUserDetails.get(i).getDefault_branch());
 
-    }
+
+        // RepoDownload Btn CLicked Event
+        viewHolder.btn_download_repo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("ButtonClicked", "BtnRepo onClick:"+gitUserDetails.get(i).getName());
+                Toast.makeText(context, "ButtonClicked:"+gitUserDetails.get(i).getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        //
+
+    } // onBindViewHolder();
 
     @Override
     public int getItemCount() {
         return gitUserDetails.size();
-    }
+    } // getItenCount();
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -74,16 +94,24 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
                 textView_Size,textView_Watchers_count,textView_Forks_count,textView_Archived,textView_Forks,
                 textView_Watchers,textView_Default_branch;
 
+        // onClick Event on Recycler View
         ArrayList<GitRepoDetail> gitRepoDetails = new ArrayList<GitRepoDetail>();
+        Button btn_download_repo;
         Context context;
+        //
 
-        public ViewHolder(@NonNull View itemView,Context context,ArrayList<GitRepoDetail> gitRepoDetails) {
+        public ViewHolder(@NonNull View itemView, final Context context, final ArrayList<GitRepoDetail> gitRepoDetails) {
             super(itemView);
 
             this.context = context;
             this.gitRepoDetails = gitRepoDetails;
 
+            // onClick Event on Recycler View
             itemView.setOnClickListener(this);
+            //
+
+            // RepoDownload Btn CLicked Event
+            btn_download_repo = itemView.findViewById(R.id.btn_download_repo);
 
             textView_Id = (TextView) itemView.<View>findViewById(R.id.textView_Id);
             textView_Name = (TextView) itemView.<View>findViewById(R.id.textView_Name);
@@ -107,20 +135,19 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
             textView_Watchers = (TextView) itemView.<View>findViewById(R.id.textView_Watchers);
             textView_Default_branch = (TextView) itemView.<View>findViewById(R.id.textView_Default_branch);
 
-        }
+        } // viewHolder();
 
+
+        // onClick Event on Recycler View
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
             GitRepoDetail gitRepoDetails = this.gitRepoDetails.get(position);
-
-            Log.d("dipen", "onClick: "+gitRepoDetails.getName());
             Toast.makeText(context, ""+gitRepoDetails.getName(), Toast.LENGTH_SHORT).show();
-
             context.startActivity(new Intent(this.context,HomePage.class));
+        } // onClick()
 
-        }
-    }
+    }  // #ViewHolder InnerClass
 
 
-}
+} // # AdapterGitRepoDetail

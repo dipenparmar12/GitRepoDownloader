@@ -121,14 +121,14 @@
                 android:id="@+id/textView_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@id/btn_view_repo"
+                android:layout_alignBaseline="@id/btn_download_repo"
                 android:text="Owner:" />
 
             <TextView
                 android:id="@+id/textView_login_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@id/btn_view_repo"
+                android:layout_alignBaseline="@id/btn_download_repo"
                 android:layout_marginEnd="3dp"
                 android:layout_toRightOf="@id/textView_login"
                 android:text="dipenparmar12"
@@ -145,7 +145,7 @@
                 android:textStyle="italic|bold" />
 
             <Button
-                android:id="@+id/btn_view_repo"
+                android:id="@+id/btn_download_repo"
                 android:layout_width="100dp"
                 android:layout_height="25dp"
                 android:layout_below="@id/textView_created_at"

@@ -3,9 +3,11 @@ package com.mscit.gitgubusers;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -151,7 +153,10 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
                 updated_at.setText("updated_at: " + gitUserDetail.getUpdated_at());
 
 
-                btn_show_repos = findViewById(R.id.btn_show_repos);
+                LinearLayout git_user_profile_ui_linearLayout = findViewById(R.id.git_user_profile_ui);
+                git_user_profile_ui_linearLayout.setVisibility(View.VISIBLE);
+
+                btn_show_repos = findViewById(R.id.btn_download_repo);
                 btn_show_repos.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

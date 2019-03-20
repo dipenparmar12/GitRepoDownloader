@@ -3,7 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+   <!--<RelativeLayout-->
+       <!--android:layout_width="match_parent"-->
+       <!--android:layout_height="match_parent">-->
+       <!--<ProgressBar-->
+           <!--android:id="@+id/git_user_profile_ui_progressBar"-->
+           <!--android:layout_width="50dp"-->
+           <!--android:layout_height="50dp"/>-->
+   <!--</RelativeLayout>-->
+
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/git_user_profile_ui"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -26,7 +37,7 @@
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jeel Parmar"
+                android:text=""
                 android:textColor="@color/purple"
                 android:textSize="33dp" />
 
@@ -143,7 +154,7 @@
                 android:textColor="@color/white" />
 
             <Button
-                android:id="@+id/btn_show_repos"
+                android:id="@+id/btn_download_repo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
