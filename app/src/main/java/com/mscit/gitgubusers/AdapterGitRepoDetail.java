@@ -45,8 +45,7 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
 
-
-        viewHolder.textView_Id.setText(gitUserDetails.get(i).getId() + "");
+        viewHolder.textView_Id.setText("Id: "+gitUserDetails.get(i).getId());
         viewHolder.textView_Name.setText(gitUserDetails.get(i).getName());
         viewHolder.textView_Full_name.setText(gitUserDetails.get(i).getFull_name());
         viewHolder.textView_Html_url.setText(gitUserDetails.get(i).getHtml_url());

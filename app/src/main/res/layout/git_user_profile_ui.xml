@@ -3,384 +3,399 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-   <!--<RelativeLayout-->
-       <!--android:layout_width="match_parent"-->
-       <!--android:layout_height="match_parent">-->
-       <!--<ProgressBar-->
-           <!--android:id="@+id/git_user_profile_ui_progressBar"-->
-           <!--android:layout_width="50dp"-->
-           <!--android:layout_height="50dp"/>-->
-   <!--</RelativeLayout>-->
 
-    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/git_user_profile_ui"
-        android:visibility="gone"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="20dp"
-        tools:context=".GitUserDetailActivity">
+        android:layout_height="600dp">
 
-        <LinearLayout
+        <ProgressBar
+            android:layout_centerInParent="true"
+            android:id="@+id/git_user_profile_ui_progressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/git_user_profile_ui_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone"
+            tools:context=".GitUserDetailActivity">
 
-            <ImageView
-                android:id="@+id/avatar_url"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginBottom="5dp"
-                android:background="@color/cardview_shadow_start_color"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textColor="@color/purple"
-                android:textSize="33dp" />
+                <ImageView
+                    android:id="@+id/avatar_url"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/cardview_shadow_start_color" />
 
-            <TextView
-                android:id="@+id/company"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Soft We "
-                android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/purple"
+                    android:textSize="33dp" />
 
-            <TextView
-                android:id="@+id/bio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="60dp"
-                android:paddingTop="10dp"
-                android:text="Every method must have an HTTP annotation that provides the request method and relative URL.an HTTP annotation that provides the request method and relative URL "
-                android:textColor="#8A8A8A"
-                android:textSize="15dp" />
+                <TextView
+                    android:id="@+id/company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Soft We "
+                    android:textSize="20dp" />
 
-            <TableLayout
+                <TextView
+                    android:id="@+id/bio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="60dp"
+                    android:paddingTop="10dp"
+                    android:text="Every method must have an HTTP annotation that provides the request method and relative URL.an HTTP annotation that provides the request method and relative URL "
+                    android:textColor="#8A8A8A"
+                    android:textSize="15dp" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp"
+
+                    android:weightSum="3">
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/public_repos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="1000"
+                            android:textAlignment="center"
+                            android:textColor="@color/purple_dark"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/followers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="2000"
+                            android:textAlignment="center"
+                            android:textColor="@color/purple_dark"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/following"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="3000"
+                            android:textAlignment="center"
+                            android:textColor="@color/purple_dark"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Public Repos"
+                            android:textAlignment="center"
+                            android:textColor="@color/purple_light" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Followers"
+                            android:textAlignment="center"
+                            android:textColor="@color/purple_light" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Following"
+                            android:textAlignment="center"
+                            android:textColor="@color/purple_light" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
 
-                android:weightSum="3">
+                <Button
+                    android:id="@+id/btn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_gradient"
+                    android:text="Back"
+                    android:textColor="@color/white" />
 
-                <TableRow>
+                <Button
+                    android:id="@+id/btn_download_repo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_gradient"
+                    android:text="Repogetiries"
+                    android:textColor="@color/white" />
 
-                    <TextView
-                        android:id="@+id/public_repos"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="1000"
-                        android:textAlignment="center"
-                        android:textColor="@color/purple_dark"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/followers"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="2000"
-                        android:textAlignment="center"
-                        android:textColor="@color/purple_dark"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/following"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="3000"
-                        android:textAlignment="center"
-                        android:textColor="@color/purple_dark"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
+            <!-- Extra Detail-->
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-                </TableRow>
+                <TextView
+                    android:id="@+id/login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
 
-                <TableRow>
+                <TextView
+                    android:id="@+id/id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Public Repos"
-                        android:textAlignment="center"
-                        android:textColor="@color/purple_light" />
+                <TextView
+                    android:id="@+id/node_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Followers"
-                        android:textAlignment="center"
-                        android:textColor="@color/purple_light" />
+                <!--<TextView-->
+                android:layout_marginBottom="10dp"
+                android:textIsSelectable="true"
+                <!--android:id="@+id/avatar_url"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Following"
-                        android:textAlignment="center"
-                        android:textColor="@color/purple_light" />
+                <TextView
+                    android:id="@+id/gravatar_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
 
-                </TableRow>
+                <TextView
+                    android:id="@+id/url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
 
-            </TableLayout>
+                <TextView
+                    android:id="@+id/html_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
 
+                <TextView
+                    android:id="@+id/followers_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/following_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/gists_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/starred_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/subscriptions_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/organizations_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/repos_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/events_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/received_events_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/site_admin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <!--<TextView-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:textIsSelectable="true"-->
+                <!--android:id="@+id/name"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+
+                <!--<TextView-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:textIsSelectable="true"-->
+                <!--android:id="@+id/company"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+
+                <TextView
+                    android:id="@+id/blog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/hireable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <!--<TextView-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:textIsSelectable="true"-->
+                <!--android:id="@+id/bio"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+
+                <!--<TextView-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:textIsSelectable="true"-->
+                <!--android:id="@+id/public_repos"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+
+                <TextView
+                    android:id="@+id/public_gists"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <!--<TextView-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:textIsSelectable="true"-->
+                <!--android:id="@+id/followers"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+
+                <!--<TextView-->
+                android:layout_marginBottom="10dp"
+                android:textIsSelectable="true"
+                <!--android:id="@+id/following"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+
+                <TextView
+                    android:id="@+id/created_at"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/updated_at"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textIsSelectable="true" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="15dp"
-            android:orientation="horizontal">
+    </RelativeLayout>
 
-            <Button
-                android:id="@+id/btn_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_gradient"
-                android:text="Back"
-                android:textColor="@color/white" />
 
-            <Button
-                android:id="@+id/btn_download_repo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_gradient"
-                android:text="Repogetiries"
-                android:textColor="@color/white" />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/node_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <!--<TextView-->
-        android:layout_marginBottom="10dp"
-        android:textIsSelectable="true"
-        <!--android:id="@+id/avatar_url"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/gravatar_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/html_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/followers_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/following_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/gists_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/starred_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/subscriptions_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/organizations_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/repos_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/events_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/received_events_url"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/site_admin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <!--<TextView-->
-        <!--android:layout_marginBottom="10dp"-->
-        <!--android:textIsSelectable="true"-->
-        <!--android:id="@+id/name"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <!--<TextView-->
-        <!--android:layout_marginBottom="10dp"-->
-        <!--android:textIsSelectable="true"-->
-        <!--android:id="@+id/company"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/blog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/hireable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <!--<TextView-->
-        <!--android:layout_marginBottom="10dp"-->
-        <!--android:textIsSelectable="true"-->
-        <!--android:id="@+id/bio"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <!--<TextView-->
-        <!--android:layout_marginBottom="10dp"-->
-        <!--android:textIsSelectable="true"-->
-        <!--android:id="@+id/public_repos"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/public_gists"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <!--<TextView-->
-        <!--android:layout_marginBottom="10dp"-->
-        <!--android:textIsSelectable="true"-->
-        <!--android:id="@+id/followers"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <!--<TextView-->
-        android:layout_marginBottom="10dp"
-        android:textIsSelectable="true"
-        <!--android:id="@+id/following"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/created_at"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginBottom="10dp"
-            android:textIsSelectable="true"
-            android:id="@+id/updated_at"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
 </ScrollView>

@@ -122,16 +122,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@id/btn_download_repo"
-                android:text="Owner:" />
+                android:text="Owner:"
+                android:visibility="gone" />
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/textView_login_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@id/btn_download_repo"
                 android:layout_marginEnd="3dp"
                 android:layout_toRightOf="@id/textView_login"
-                android:text="dipenparmar12"
+                android:text="LoginName"
                 android:textColor="@color/gray_dark"
                 android:textStyle="italic|bold" />
 
@@ -139,7 +141,7 @@
                 android:id="@+id/textView_Id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textView_login_value"
+                android:layout_alignBaseline="@id/btn_download_repo"
                 android:text="123456"
                 android:textColor="@color/gray_dark"
                 android:textStyle="italic|bold" />
@@ -152,7 +154,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/btn_gradient"
-                android:text="View Repo"
+                android:text="Download"
                 android:textSize="10dp" />
 
         </RelativeLayout>
