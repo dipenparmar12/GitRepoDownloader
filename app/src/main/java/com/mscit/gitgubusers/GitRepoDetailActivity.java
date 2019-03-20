@@ -61,30 +61,38 @@ public class GitRepoDetailActivity extends AppCompatActivity implements Callback
 
     @Override
     public void onResponse(Call call, Response response) {
-        Log.e(TAG, "onResponse_Body: " + response.body().toString());
+        Log.e(TAG, "onResponse_Body: " + response.body());
         Log.e(TAG, "onResponse_ResponseObject: " + response);
 
-        if (response.body() == null) {
-            Log.e(TAG, "userNotFound:" + response.body());
+        if(response.isSuccessful() ){
+            if (response.body() == null) {
+                Log.e(TAG, "userNotFound:" + response.body());
 
-            getApplicationContext().startActivity(new Intent(getApplicationContext(), HomePage.class).putExtra("textViewSearchQry",serach_qry));
+                Toast.makeText(getApplicationContext(), serach_qry+":Repository NotFound:", Toast.LENGTH_SHORT).show();
+                getApplicationContext().startActivity(new Intent(getApplicationContext(), HomePage.class).putExtra("textViewSearchQry",serach_qry));
+
+            } else {
+                Log.e(TAG, "userFound:" + response.body());
+
+                ArrayList<GitRepoDetail> gitUserDetails = new ArrayList<GitRepoDetail>();
+                gitUserDetails = (ArrayList<GitRepoDetail>) response.body();
+
+                recyclerView = findViewById(R.id.recyclerViewGiUser);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                adapter = new AdapterGitRepoDetail(gitUserDetails, getApplicationContext());
+                recyclerView.setAdapter(adapter);
+
+            }
+
+            progressBar = findViewById(R.id.progressBar1);
+            progressBar.setVisibility(View.INVISIBLE);
+
+        }else{
             Toast.makeText(getApplicationContext(), serach_qry+":Repository NotFound:", Toast.LENGTH_SHORT).show();
-
-        } else {
-            Log.e(TAG, "userFound:" + response.body());
-
-            ArrayList<GitRepoDetail> gitUserDetails = new ArrayList<GitRepoDetail>();
-            gitUserDetails = (ArrayList<GitRepoDetail>) response.body();
-
-            recyclerView = findViewById(R.id.recyclerViewGiUser);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-            adapter = new AdapterGitRepoDetail(gitUserDetails, getApplicationContext());
-            recyclerView.setAdapter(adapter);
+            getApplicationContext().startActivity(new Intent(getApplicationContext(), HomePage.class).putExtra("textViewSearchQry",serach_qry));
 
         }
 
-        progressBar = findViewById(R.id.progressBar1);
-        progressBar.setVisibility(View.INVISIBLE);
     }
 
     @Override
