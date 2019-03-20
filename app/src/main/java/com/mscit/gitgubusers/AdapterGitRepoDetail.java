@@ -1,5 +1,6 @@
 package com.mscit.gitgubusers;
 
+import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -72,8 +73,13 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
         viewHolder.btn_download_repo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("ButtonClicked", "BtnRepo onClick:"+gitUserDetails.get(i).getName());
+                String repoDownloadUrl = gitUserDetails.get(i).getSvn_url()+"/archive/"+gitUserDetails.get(i).getDefault_branch()+".zip";
+
+                Log.e("ButtonClicked", "DownloadUrl:"+repoDownloadUrl);
+                Log.e("ButtonClicked", "BtnRepo onClick:"+gitUserDetails.get(i).getName());
                 Toast.makeText(context, "ButtonClicked:"+gitUserDetails.get(i).getName(), Toast.LENGTH_SHORT).show();
+
+                
             }
         });
         //

@@ -22,6 +22,11 @@ import retrofit2.http.Path;
  * https://api.github.com/search/repositories?q=flexsass
  * https://api.github.com/repos/dipenparmar12/FlexSass
 
+ * Download Uri
+ * https://github.com/userName/RepoName/archive/master.zip
+ * svn_url+"/archive/"+default_branch+".zip"
+
+
  */
 
 
@@ -39,3 +44,4 @@ public interface GitApi {
 //    Call<ArrayList<GitUserDetail>> getReposBySearch(@Path("SearchQry") String SearchQry);
 
 }
+

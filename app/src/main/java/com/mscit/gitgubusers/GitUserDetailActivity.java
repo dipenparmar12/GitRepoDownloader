@@ -161,6 +161,10 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
                 LinearLayout git_user_profile_ui_linearLayout = findViewById(R.id.git_user_profile_ui_linear_layout);
                 git_user_profile_ui_linearLayout.setVisibility(View.VISIBLE);
 
+                // Set Visitble userProfile ExtraDetails (Detailed Data) Layouy When Data Successfly loaded to Activity
+                LinearLayout git_user_profile_ui_linear_layout_extra_details = findViewById(R.id.git_user_profile_ui_linear_layout_extra_details);
+                git_user_profile_ui_linearLayout.setVisibility(View.VISIBLE);
+
 
                 btn_show_repos = findViewById(R.id.btn_download_repo);
                 btn_show_repos.setOnClickListener(new View.OnClickListener() {

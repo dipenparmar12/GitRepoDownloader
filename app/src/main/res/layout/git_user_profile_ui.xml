@@ -9,10 +9,10 @@
         android:layout_height="600dp">
 
         <ProgressBar
-            android:layout_centerInParent="true"
             android:id="@+id/git_user_profile_ui_progressBar"
             android:layout_width="50dp"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:layout_centerInParent="true" />
 
         <LinearLayout xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/git_user_profile_ui_linear_layout"
@@ -170,9 +170,10 @@
 
             <!-- Extra Detail-->
             <LinearLayout
-                android:visibility="gone"
+                android:id="@+id/git_user_profile_ui_linear_layout_extra_details"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/login"
