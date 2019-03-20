@@ -81,7 +81,7 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
 
                 Log.e("ButtonClicked", "DownloadUrl:"+repoDownloadUrl);
                 Log.e("ButtonClicked", "BtnRepo onClick:"+gitUserDetails.get(i).getName());
-                Toast.makeText(context, "ButtonClicked:"+gitUserDetails.get(i).getName(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Downloading Started :"+gitUserDetails.get(i).getName(), Toast.LENGTH_SHORT).show();
 
                 downloadRepoByUrl(repoDownloadUrl,gitUserDetails.get(i).getFull_name());
 
@@ -161,24 +161,39 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
     }  // #ViewHolder InnerClass
 
 
-    public void downloadRepoByUrl(String url,String fileTitle){
+
+    public void downloadRepoByUrl(String url,String fileName){
         Uri download_url = Uri.parse(url);
         DownloadManager.Request request = new DownloadManager.Request(download_url);
-        request.setTitle(fileTitle);
+        request.setTitle("GitRepo_"+fileName);
         request.setVisibleInDownloadsUi(true);
+//        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"/GitRepos/"+fileName);
         DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
         downloadManager.enqueue(request);
 
-//        DownloadManager.Request request = new DownloadManager.Request(download_url);
-//        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-//        request.setAllowedOverRoaming(false);
-//        request.setTitle("GadgetSaint Downloading " + "Sample" + ".png");
-//        request.setDescription("Downloading " + "Sample" + ".png");
-//        request.setVisibleInDownloadsUi(true);
-//        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "/GadgetSaint/"  + "/" + "Sample" + ".png");
-//        downloadManager.enqueue(request);
+//        AndroidNetworking.download(url,"",fileName).build()
+//                .setDownloadProgressListener(new DownloadProgressListener() {
+//                    public void onProgress(long bytesDownloaded, long totalBytes) {
+//                        bar.setMax((int) totalBytes);
+//                        bar.setProgress((int) bytesDownloaded);
+//                    }
+//                }).startDownload(new DownloadListener() {
+//            public void onDownloadComplete() {
+//            ...
+//            }
+//
+//            public void onError(ANError error) {
+//            ...
+//            }
+//        });
+
         
+
     } // downloadRepoByUrl(String);
+
+
+
+
 
 
 } // # AdapterGitRepoDetail
