@@ -3,6 +3,8 @@ package com.mscit.gitgubusers;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -21,6 +23,8 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
 
     ArrayList<GitRepoDetail> gitUserDetails;
     Context context;
+
+
 
     public AdapterGitRepoDetail(ArrayList<GitRepoDetail> gitUserDetails, Context context) {
         this.gitUserDetails = gitUserDetails;
@@ -79,7 +83,8 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
                 Log.e("ButtonClicked", "BtnRepo onClick:"+gitUserDetails.get(i).getName());
                 Toast.makeText(context, "ButtonClicked:"+gitUserDetails.get(i).getName(), Toast.LENGTH_SHORT).show();
 
-                
+                downloadRepoByUrl(repoDownloadUrl,gitUserDetails.get(i).getFull_name());
+
             }
         });
         //
@@ -143,6 +148,7 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
         } // viewHolder();
 
 
+
         // onClick Event on Recycler View
         @Override
         public void onClick(View v) {
@@ -153,6 +159,26 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
         } // onClick()
 
     }  // #ViewHolder InnerClass
+
+
+    public void downloadRepoByUrl(String url,String fileTitle){
+        Uri download_url = Uri.parse(url);
+        DownloadManager.Request request = new DownloadManager.Request(download_url);
+        request.setTitle(fileTitle);
+        request.setVisibleInDownloadsUi(true);
+        DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        downloadManager.enqueue(request);
+
+//        DownloadManager.Request request = new DownloadManager.Request(download_url);
+//        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
+//        request.setAllowedOverRoaming(false);
+//        request.setTitle("GadgetSaint Downloading " + "Sample" + ".png");
+//        request.setDescription("Downloading " + "Sample" + ".png");
+//        request.setVisibleInDownloadsUi(true);
+//        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "/GadgetSaint/"  + "/" + "Sample" + ".png");
+//        downloadManager.enqueue(request);
+        
+    } // downloadRepoByUrl(String);
 
 
 } // # AdapterGitRepoDetail

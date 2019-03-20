@@ -178,7 +178,7 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
 
             } // IF-Else() on Error
 
-        }else{
+        } else {
             Toast.makeText(getApplicationContext(), serach_qry + " :User NotFound:", Toast.LENGTH_SHORT).show();
             getApplicationContext().startActivity(new Intent(getApplicationContext(), HomePage.class).putExtra("textViewSearchQry", serach_qry));
 
