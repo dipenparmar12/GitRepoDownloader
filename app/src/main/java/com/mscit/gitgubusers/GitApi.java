@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 
 
@@ -35,13 +36,16 @@ public interface GitApi {
     public final String BASE_URL = "https://api.github.com/";
 
     @GET("users/{gitUser}")
-    Call<GitUserDetail> getUserDetail(@Path("gitUser") String gitUser);
+    Call<GitUserDetailJson> getUserDetail(@Path("gitUser") String gitUser);
 
     @GET("users/{gitUser}/repos")
-    Call<ArrayList<GitRepoDetail>> getReposByUser(@Path("gitUser") String gitUser);
+    Call<ArrayList<GitRepoDetailJson>> getReposByUser(@Path("gitUser") String gitUser);
+
+    @GET("search/repositories")
+    Call<ArrayList<GitRepoDetailJson>> getReposBySearchPara(@Query("q") String SearchQry);
 
 //    @GET("search/repositories?q={SearchQry}")
-//    Call<ArrayList<GitUserDetail>> getReposBySearch(@Path("SearchQry") String SearchQry);
+//    Call<ArrayList<GitUserDetailJson>> getReposBySearchPara(@Path("SearchQry") String SearchQry);
 
 }
 

@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -27,15 +26,15 @@ public class GitRepoDetailActivity extends AppCompatActivity implements Callback
 //    }
 
     Retrofit retrofit;
-    GitRepoDetail gitUserDetail;
+    GitRepoDetailJson gitUserDetail;
     String serach_qry,radioGroupSearchType;
     ProgressBar progressBar;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     GitApi gitApi;
 
-    Call<GitUserDetail> call_GitUserDetail;
-    Call<ArrayList<GitRepoDetail>> call_GitRepoDetail;
+    Call<GitUserDetailJson> call_GitUserDetail;
+    Call<ArrayList<GitRepoDetailJson>> call_GitRepoDetail;
 
     final String TAG = "dipen";
 
@@ -74,8 +73,8 @@ public class GitRepoDetailActivity extends AppCompatActivity implements Callback
             } else {
                 Log.e(TAG, "userFound:" + response.body());
 
-                ArrayList<GitRepoDetail> gitUserDetails = new ArrayList<GitRepoDetail>();
-                gitUserDetails = (ArrayList<GitRepoDetail>) response.body();
+                ArrayList<GitRepoDetailJson> gitUserDetails = new ArrayList<GitRepoDetailJson>();
+                gitUserDetails = (ArrayList<GitRepoDetailJson>) response.body();
 
                 recyclerView = findViewById(R.id.recyclerViewGiUser);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -88,6 +87,7 @@ public class GitRepoDetailActivity extends AppCompatActivity implements Callback
             progressBar.setVisibility(View.INVISIBLE);
 
         }else{
+
             Toast.makeText(getApplicationContext(), serach_qry+":Repository NotFound:", Toast.LENGTH_SHORT).show();
             getApplicationContext().startActivity(new Intent(getApplicationContext(), HomePage.class).putExtra("textViewSearchQry",serach_qry));
 

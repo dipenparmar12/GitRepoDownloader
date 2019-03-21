@@ -4,7 +4,6 @@ import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,10 +19,10 @@ import java.util.ArrayList;
 
 public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDetail.ViewHolder> {
 
-    ArrayList<GitRepoDetail> gitUserDetails;
+    ArrayList<GitRepoDetailJson> gitUserDetails;
     Context context;
 
-    public AdapterGitRepoDetail(ArrayList<GitRepoDetail> gitUserDetails, Context context) {
+    public AdapterGitRepoDetail(ArrayList<GitRepoDetailJson> gitUserDetails, Context context) {
         this.gitUserDetails = gitUserDetails;
         this.context = context;
     } // AdapterGitRepoDetail() Constructor
@@ -102,16 +101,16 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
                 textView_Watchers,textView_Default_branch;
 
         // onClick Event on Recycler View
-        ArrayList<GitRepoDetail> gitRepoDetails = new ArrayList<GitRepoDetail>();
+        ArrayList<GitRepoDetailJson> gitRepoDetailJsons = new ArrayList<GitRepoDetailJson>();
         Button btn_download_repo;
         Context context;
         //
 
-        public ViewHolder(@NonNull View itemView, final Context context, final ArrayList<GitRepoDetail> gitRepoDetails) {
+        public ViewHolder(@NonNull View itemView, final Context context, final ArrayList<GitRepoDetailJson> gitRepoDetailJsons) {
             super(itemView);
 
             this.context = context;
-            this.gitRepoDetails = gitRepoDetails;
+            this.gitRepoDetailJsons = gitRepoDetailJsons;
 
             // onClick Event on Recycler View
             itemView.setOnClickListener(this);
@@ -150,8 +149,8 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition();
-            GitRepoDetail gitRepoDetails = this.gitRepoDetails.get(position);
-            Toast.makeText(context, ""+gitRepoDetails.getName(), Toast.LENGTH_SHORT).show();
+            GitRepoDetailJson gitRepoDetailsJson = this.gitRepoDetailJsons.get(position);
+            Toast.makeText(context, ""+ gitRepoDetailsJson.getName(), Toast.LENGTH_SHORT).show();
             context.startActivity(new Intent(this.context,HomePage.class));
         } // onClick()
 

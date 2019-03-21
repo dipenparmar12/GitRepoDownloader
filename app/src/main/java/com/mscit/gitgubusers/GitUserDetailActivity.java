@@ -21,7 +21,7 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
 
     Retrofit retrofit;
     GitApi gitApi;
-    GitUserDetail gitUserDetail;
+    GitUserDetailJson gitUserDetailJson;
 
     String serach_qry;
     Button btn_back, btn_show_repos;
@@ -46,7 +46,7 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
         gitApi = retrofit.create(GitApi.class);
 
         // Passing SearchQRy to GitAPi ( prepering data For Sending Request )
-        Call<GitUserDetail> call_GitUserDetail = gitApi.getUserDetail(serach_qry); // set to serach_qry
+        Call<GitUserDetailJson> call_GitUserDetail = gitApi.getUserDetail(serach_qry); // set to serach_qry
         call_GitUserDetail.enqueue(this);
 
 
@@ -83,9 +83,9 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
                         events_url, received_events_url, type, site_admin, name, company, blog, location,
                         email, hireable, bio, public_repos, public_gists, followers, following, created_at, updated_at;
 
-                gitUserDetail = (GitUserDetail) response.body();
+                gitUserDetailJson = (GitUserDetailJson) response.body();
 
-                Log.e(TAG, "onResponse:" + gitUserDetail);
+                Log.e(TAG, "onResponse:" + gitUserDetailJson);
 
                 login = findViewById(R.id.login);
                 id = findViewById(R.id.id);
@@ -120,37 +120,37 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
                 updated_at = findViewById(R.id.updated_at);
 
 
-                login.setText("login: " + gitUserDetail.getLogin());
-                id.setText("id: " + gitUserDetail.getId());
-                node_id.setText("node_id: " + gitUserDetail.getNode_id());
-//            avatar_url.setText("avatar_url: " + gitUserDetail.getAvatar_url());
-//            gravatar_id.setText("gravatar_id: " + gitUserDetail.getGravatar_id());
-                url.setText("url: " + gitUserDetail.getUrl());
-                html_url.setText("html_url: " + gitUserDetail.getHtml_url());
-                followers_url.setText("followers_url: " + gitUserDetail.getFollowers_url());
-                following_url.setText("following_url: " + gitUserDetail.getFollowing_url());
-                gists_url.setText("gists_url: " + gitUserDetail.getGists_url());
-                starred_url.setText("starred_url: " + gitUserDetail.getStarred_url());
-                subscriptions_url.setText("subscriptions_url: " + gitUserDetail.getSubscriptions_url());
-                organizations_url.setText("organizations_url: " + gitUserDetail.getOrganizations_url());
-                repos_url.setText("repos_url: " + gitUserDetail.getRepos_url());
-                events_url.setText("events_url: " + gitUserDetail.getEvents_url());
-                received_events_url.setText("received_events_url: " + gitUserDetail.getReceived_events_url());
-                type.setText("type: " + gitUserDetail.getType());
-                site_admin.setText("site_admin: " + gitUserDetail.getSite_admin());
-                name.setText(gitUserDetail.getName());
-                company.setText("company: " + gitUserDetail.getCompany());
-                blog.setText("blog: " + gitUserDetail.getBlog());
-                location.setText("location: " + gitUserDetail.getLocation());
-                email.setText("email: " + gitUserDetail.getEmail());
-                hireable.setText("hireable: " + gitUserDetail.getHireable());
-                bio.setText("bio: " + gitUserDetail.getBio());
-                public_repos.setText(gitUserDetail.getPublic_repos());
-                public_gists.setText("public_gists: " + gitUserDetail.getPublic_gists());
-                followers.setText(gitUserDetail.getFollowers());
-                following.setText(gitUserDetail.getFollowing());
-                created_at.setText("created_at: " + gitUserDetail.getCreated_at());
-                updated_at.setText("updated_at: " + gitUserDetail.getUpdated_at());
+                login.setText("login: " + gitUserDetailJson.getLogin());
+                id.setText("id: " + gitUserDetailJson.getId());
+                node_id.setText("node_id: " + gitUserDetailJson.getNode_id());
+//            avatar_url.setText("avatar_url: " + gitUserDetailJson.getAvatar_url());
+//            gravatar_id.setText("gravatar_id: " + gitUserDetailJson.getGravatar_id());
+                url.setText("url: " + gitUserDetailJson.getUrl());
+                html_url.setText("html_url: " + gitUserDetailJson.getHtml_url());
+                followers_url.setText("followers_url: " + gitUserDetailJson.getFollowers_url());
+                following_url.setText("following_url: " + gitUserDetailJson.getFollowing_url());
+                gists_url.setText("gists_url: " + gitUserDetailJson.getGists_url());
+                starred_url.setText("starred_url: " + gitUserDetailJson.getStarred_url());
+                subscriptions_url.setText("subscriptions_url: " + gitUserDetailJson.getSubscriptions_url());
+                organizations_url.setText("organizations_url: " + gitUserDetailJson.getOrganizations_url());
+                repos_url.setText("repos_url: " + gitUserDetailJson.getRepos_url());
+                events_url.setText("events_url: " + gitUserDetailJson.getEvents_url());
+                received_events_url.setText("received_events_url: " + gitUserDetailJson.getReceived_events_url());
+                type.setText("type: " + gitUserDetailJson.getType());
+                site_admin.setText("site_admin: " + gitUserDetailJson.getSite_admin());
+                name.setText(gitUserDetailJson.getName());
+                company.setText("company: " + gitUserDetailJson.getCompany());
+                blog.setText("blog: " + gitUserDetailJson.getBlog());
+                location.setText("location: " + gitUserDetailJson.getLocation());
+                email.setText("email: " + gitUserDetailJson.getEmail());
+                hireable.setText("hireable: " + gitUserDetailJson.getHireable());
+                bio.setText("bio: " + gitUserDetailJson.getBio());
+                public_repos.setText(gitUserDetailJson.getPublic_repos());
+                public_gists.setText("public_gists: " + gitUserDetailJson.getPublic_gists());
+                followers.setText(gitUserDetailJson.getFollowers());
+                following.setText(gitUserDetailJson.getFollowing());
+                created_at.setText("created_at: " + gitUserDetailJson.getCreated_at());
+                updated_at.setText("updated_at: " + gitUserDetailJson.getUpdated_at());
 
 
                 // Remove ProgressBar When Data Successfly loaded to Activity
@@ -171,7 +171,7 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
                     @Override
                     public void onClick(View v) {
                         startActivity(new Intent(getApplicationContext(), GitRepoDetailActivity.class)
-                                .putExtra("textViewSearchQry", gitUserDetail.getLogin())
+                                .putExtra("textViewSearchQry", gitUserDetailJson.getLogin())
                         );
                     }
                 }); // Show users Repositiries

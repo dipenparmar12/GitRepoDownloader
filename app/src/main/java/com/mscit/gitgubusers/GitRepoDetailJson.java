@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName;
 
 import java.security.acl.Owner;
 
-public class GitRepoDetail {
+public class GitRepoDetailJson {
     private Integer id;
     private  String name,full_name,html_url,description,url,languages_url,contributors_url,created_at,updated_at,git_url,clone_url,svn_url,homepage,size,watchers_count,forks_count,archived,forks,watchers,default_branch;
 
-    public GitRepoDetail(Integer id, String name, String full_name, String html_url, String description, String url, String languages_url, String contributors_url, String created_at, String updated_at, String git_url, String clone_url, String svn_url, String homepage, String size, String watchers_count, String forks_count, String archived, String forks, String watchers, String default_branch) {
+    public GitRepoDetailJson(Integer id, String name, String full_name, String html_url, String description, String url, String languages_url, String contributors_url, String created_at, String updated_at, String git_url, String clone_url, String svn_url, String homepage, String size, String watchers_count, String forks_count, String archived, String forks, String watchers, String default_branch) {
         this.id = id;
         this.name = name;
         this.full_name = full_name;

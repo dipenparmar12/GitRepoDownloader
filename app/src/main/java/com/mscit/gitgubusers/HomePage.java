@@ -46,6 +46,7 @@ public class HomePage extends AppCompatActivity {
                     intent.putExtra("textViewSearchQry",editText_qry.getText().toString());
                     startActivity(intent);
                 }else{
+//                    intent = new Intent(getApplicationContext(), RepoSearchByQueryParaActivity.class);
                     intent = new Intent(getApplicationContext(), GitRepoDetailActivity.class);
                     intent.putExtra("textViewSearchQry",editText_qry.getText().toString());
                     startActivity(intent);

@@ -7,15 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.textservice.TextInfo;
-import android.widget.ImageButton;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class AdapterGitUserDetail extends RecyclerView.Adapter<AdapterGitUserDetail.ViewHolder> {
 
-    GitUserDetail gitUserDetail;
+    GitUserDetailJson gitUserDetailJson;
     Context context;
 
     @NonNull
