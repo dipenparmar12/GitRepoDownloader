@@ -13,9 +13,9 @@ public class RepoListItemsJson {
     @SerializedName("incomplete_results")
     @Expose
     private Boolean incompleteResults;
-    @SerializedName("items")
+    @SerializedName("GitRepoDetailArrayList")
     @Expose
-    private ArrayList<GitRepoDetailJson> items = null;
+    private ArrayList<GitRepoDetailJson> GitRepoDetailArrayList = null;
 
     public Integer getTotalCount() {
         return totalCount;
@@ -26,7 +26,7 @@ public class RepoListItemsJson {
         return "RepoListItemsJson{" +
                 "totalCount=" + totalCount +
                 ", incompleteResults=" + incompleteResults +
-                ", items=" + items +
+                ", GitRepoDetailArrayList=" + GitRepoDetailArrayList +
                 '}';
     }
 
@@ -34,17 +34,17 @@ public class RepoListItemsJson {
         return incompleteResults;
     }
 
-    public ArrayList<GitRepoDetailJson> getItems() {
-        return items;
+    public ArrayList<GitRepoDetailJson> getGitRepoDetailArrayList() {
+        return GitRepoDetailArrayList;
     }
 
-    public RepoListItemsJson(Integer totalCount, Boolean incompleteResults, ArrayList<GitRepoDetailJson> items) {
+    public RepoListItemsJson(Integer totalCount, Boolean incompleteResults, ArrayList<GitRepoDetailJson> GitRepoDetailArrayList) {
         this.totalCount = totalCount;
         this.incompleteResults = incompleteResults;
-        this.items = items;
+        this.GitRepoDetailArrayList = GitRepoDetailArrayList;
     }
 
-    public String arrayToString(){
-        return this.items.toString();
+    public String itemsArrayToString(){
+        return this.GitRepoDetailArrayList.toString();
     }
 }

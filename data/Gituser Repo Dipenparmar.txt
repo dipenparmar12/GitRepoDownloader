@@ -1125,7 +1125,7 @@
     "ssh_url": "git@github.com:dipenparmar12/code-settings-sync.git",
     "clone_url": "https://github.com/dipenparmar12/code-settings-sync.git",
     "svn_url": "https://github.com/dipenparmar12/code-settings-sync",
-    "homepage": "https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync",
+    "homepage": "https://marketplace.visualstudio.com/GitRepoDetailArrayList?itemName=Shan.code-settings-sync",
     "size": 6072,
     "stargazers_count": 0,
     "watchers_count": 0,
@@ -2051,7 +2051,7 @@
       "site_admin": false
     },
     "html_url": "https://github.com/dipenparmar12/GridLayoutMotion",
-    "description": "A retro-style grid layout with a playful motion hover effect on the grid items.",
+    "description": "A retro-style grid layout with a playful motion hover effect on the grid GitRepoDetailArrayList.",
     "fork": true,
     "url": "https://api.github.com/repos/dipenparmar12/GridLayoutMotion",
     "forks_url": "https://api.github.com/repos/dipenparmar12/GridLayoutMotion/forks",

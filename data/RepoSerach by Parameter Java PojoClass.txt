@@ -14,9 +14,9 @@ private Integer totalCount;
 @SerializedName("incomplete_results")
 @Expose
 private Boolean incompleteResults;
-@SerializedName("items")
+@SerializedName("GitRepoDetailArrayList")
 @Expose
-private List<Item> items = null;
+private List<Item> GitRepoDetailArrayList = null;
 
 public Integer getTotalCount() {
 return totalCount;
@@ -35,11 +35,11 @@ this.incompleteResults = incompleteResults;
 }
 
 public List<Item> getItems() {
-return items;
+return GitRepoDetailArrayList;
 }
 
-public void setItems(List<Item> items) {
-this.items = items;
+public void setItems(List<Item> GitRepoDetailArrayList) {
+this.GitRepoDetailArrayList = GitRepoDetailArrayList;
 }
 
 }
