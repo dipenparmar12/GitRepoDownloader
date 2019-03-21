@@ -1,15 +1,22 @@
 package com.mscit.gitgubusers;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
+
+import java.io.IOException;
+import java.net.URL;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -78,7 +85,8 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
 
             } else {
 
-                TextView login, id, node_id, avatar_url, gravatar_id, url, html_url, followers_url, following_url,
+                ImageView avatar_url;
+                TextView login, id, node_id, gravatar_id, url, html_url, followers_url, following_url,
                         gists_url, starred_url, subscriptions_url, organizations_url, repos_url,
                         events_url, received_events_url, type, site_admin, name, company, blog, location,
                         email, hireable, bio, public_repos, public_gists, followers, following, created_at, updated_at;
@@ -90,8 +98,8 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
                 login = findViewById(R.id.login);
                 id = findViewById(R.id.id);
                 node_id = findViewById(R.id.node_id);
-//            avatar_url = findViewById(R.id.avatar_url);
-//            gravatar_id = findViewById(R.id.gravatar_id);
+                avatar_url = findViewById(R.id.avatar_url);
+                gravatar_id = findViewById(R.id.gravatar_id);
                 url = findViewById(R.id.url);
                 html_url = findViewById(R.id.html_url);
                 followers_url = findViewById(R.id.followers_url);
@@ -123,7 +131,11 @@ public class GitUserDetailActivity extends AppCompatActivity implements Callback
                 login.setText("login: " + gitUserDetailJson.getLogin());
                 id.setText("id: " + gitUserDetailJson.getId());
                 node_id.setText("node_id: " + gitUserDetailJson.getNode_id());
-//            avatar_url.setText("avatar_url: " + gitUserDetailJson.getAvatar_url());
+
+                // Fetching Avater_image to imageView (User Profile,DP)
+                String image_url = gitUserDetailJson.getAvatar_url();
+                Picasso.get().load(image_url).into(avatar_url);
+
 //            gravatar_id.setText("gravatar_id: " + gitUserDetailJson.getGravatar_id());
                 url.setText("url: " + gitUserDetailJson.getUrl());
                 html_url.setText("html_url: " + gitUserDetailJson.getHtml_url());
