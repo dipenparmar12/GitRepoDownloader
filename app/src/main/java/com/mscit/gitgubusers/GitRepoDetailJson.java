@@ -117,4 +117,30 @@ public class GitRepoDetailJson {
         return default_branch;
     }
 
+    @Override
+    public String toString() {
+        return "GitRepoDetailJson{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", full_name='" + full_name + '\'' +
+                ", html_url='" + html_url + '\'' +
+                ", description='" + description + '\'' +
+                ", url='" + url + '\'' +
+                ", languages_url='" + languages_url + '\'' +
+                ", contributors_url='" + contributors_url + '\'' +
+                ", created_at='" + created_at + '\'' +
+                ", updated_at='" + updated_at + '\'' +
+                ", git_url='" + git_url + '\'' +
+                ", clone_url='" + clone_url + '\'' +
+                ", svn_url='" + svn_url + '\'' +
+                ", homepage='" + homepage + '\'' +
+                ", size='" + size + '\'' +
+                ", watchers_count='" + watchers_count + '\'' +
+                ", forks_count='" + forks_count + '\'' +
+                ", archived='" + archived + '\'' +
+                ", forks='" + forks + '\'' +
+                ", watchers='" + watchers + '\'' +
+                ", default_branch='" + default_branch + '\'' +
+                '}';
+    }
 }

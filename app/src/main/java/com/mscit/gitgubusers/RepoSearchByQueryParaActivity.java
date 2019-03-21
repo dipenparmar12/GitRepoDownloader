@@ -25,14 +25,14 @@ public class RepoSearchByQueryParaActivity extends AppCompatActivity implements 
     GitApi gitApi;
 
     Call<GitUserDetailJson> call_GitUserDetail;
-    Call<ArrayList<GitRepoDetailJson>> call_GitRepoSearchByQueryPara;
+    Call<RepoListItemsJson> call_GitRepoSearchByQueryPara;
 
     final String TAG = "dipen";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("dipen","RespoSearch Activity:");
+        Log.e("dipen","RepoSearchByQueryPar Activity():");
         setContentView(R.layout.activity_git_repo_detail);
 
         radioGroupSearchType = getIntent().getExtras().getString("radioGroupSearchType");
@@ -54,6 +54,11 @@ public class RepoSearchByQueryParaActivity extends AppCompatActivity implements 
     public void onResponse(Call call, Response response) {
         Log.e(TAG, "onResponse_Body: " + response.body());
         Log.e(TAG, "onResponse_ResponseObject: " + response);
+
+        RepoListItemsJson repoListItemsJson = (RepoListItemsJson) response.body();
+        Log.e(TAG,"Found_RepoList:Result: "+ repoListItemsJson.toString());
+        Log.e(TAG,"Found_RepoList:String: "+ repoListItemsJson.arrayToString());
+
 
 //        if (response.isSuccessful()) {
 //            Log.e(TAG, "userNotFound:" + response.body());

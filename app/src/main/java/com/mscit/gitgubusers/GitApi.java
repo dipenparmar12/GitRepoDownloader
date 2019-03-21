@@ -42,7 +42,7 @@ public interface GitApi {
     Call<ArrayList<GitRepoDetailJson>> getReposByUser(@Path("gitUser") String gitUser);
 
     @GET("search/repositories")
-    Call<ArrayList<GitRepoDetailJson>> getReposBySearchPara(@Query("q") String SearchQry);
+    Call<RepoListItemsJson> getReposBySearchPara(@Query("q") String SearchQry);
 
 //    @GET("search/repositories?q={SearchQry}")
 //    Call<ArrayList<GitUserDetailJson>> getReposBySearchPara(@Path("SearchQry") String SearchQry);
