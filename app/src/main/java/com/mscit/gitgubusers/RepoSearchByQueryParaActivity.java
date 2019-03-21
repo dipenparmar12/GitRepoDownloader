@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import javax.security.auth.login.LoginException;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -62,21 +60,18 @@ public class RepoSearchByQueryParaActivity extends AppCompatActivity implements 
         if (response.isSuccessful()) {
             Log.e(TAG,"RepoSearchByQrypara:Response.isSuccessful:");
 
-            if (response.body() == null) {
+            RepoListItemsJson repoListItemsJson = (RepoListItemsJson) response.body();
+            Log.e(TAG, "RepoListItemJson:"+repoListItemsJson);
+
+            if (response.body() == null || repoListItemsJson.getReposFoundTotalCount() == 0  ) {
                 Toast.makeText(getApplicationContext(), serach_qry + ":Repository NotFound:", Toast.LENGTH_SHORT).show();
                 getApplicationContext().startActivity(new Intent(getApplicationContext(), HomePage.class).putExtra("textViewSearchQry", serach_qry));
 
             } else {
-
-                RepoListItemsJson repoListItemsJson = (RepoListItemsJson) response.body();
-
-                Log.e(TAG, "RepoListItemJson:"+repoListItemsJson);
-
                 recyclerView = findViewById(R.id.recyclerViewGiUser);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 adapter = new AdapterGitRepoDetail(repoListItemsJson.getGitRepoDetailArrayList(), getApplicationContext());
                 recyclerView.setAdapter(adapter);
-
             }
 
             progressBar = findViewById(R.id.progressBar1);

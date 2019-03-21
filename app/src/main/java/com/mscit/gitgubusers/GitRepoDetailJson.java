@@ -6,10 +6,19 @@ import com.google.gson.annotations.SerializedName;
 import java.security.acl.Owner;
 
 public class GitRepoDetailJson {
+
+    @SerializedName("owner")
+    private OwnerJson ownerJson;
+
     private Integer id;
     private  String name,full_name,html_url,description,url,languages_url,contributors_url,created_at,updated_at,git_url,clone_url,svn_url,homepage,size,watchers_count,forks_count,archived,forks,watchers,default_branch;
 
-    public GitRepoDetailJson(Integer id, String name, String full_name, String html_url, String description, String url, String languages_url, String contributors_url, String created_at, String updated_at, String git_url, String clone_url, String svn_url, String homepage, String size, String watchers_count, String forks_count, String archived, String forks, String watchers, String default_branch) {
+    public OwnerJson getOwnerJson() {
+        return ownerJson;
+    }
+
+    public GitRepoDetailJson(OwnerJson ownerJson, Integer id, String name, String full_name, String html_url, String description, String url, String languages_url, String contributors_url, String created_at, String updated_at, String git_url, String clone_url, String svn_url, String homepage, String size, String watchers_count, String forks_count, String archived, String forks, String watchers, String default_branch) {
+        this.ownerJson = ownerJson;
         this.id = id;
         this.name = name;
         this.full_name = full_name;
@@ -117,10 +126,12 @@ public class GitRepoDetailJson {
         return default_branch;
     }
 
+
     @Override
     public String toString() {
         return "GitRepoDetailJson{" +
-                "id=" + id +
+                "ownerJson=" + ownerJson.toString() +
+                ", id=" + id +
                 ", name='" + name + '\'' +
                 ", full_name='" + full_name + '\'' +
                 ", html_url='" + html_url + '\'' +

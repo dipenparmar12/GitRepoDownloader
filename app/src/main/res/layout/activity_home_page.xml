@@ -41,7 +41,7 @@
                 android:layout_below="@+id/textView_serach"
                 android:layout_weight="40"
                 android:maxLines="1"
-                android:text="FlexSass" />
+                android:text="FlexSassExample" />
 
             <!--nirajparmar68,dipenparmar12,Learn2Crack,ranparagaurav,laravel, -->
 
@@ -55,14 +55,14 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton_users"
+                    android:id="@+id/radioButton_find_users"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="ByUserId" />
+                    android:text="UserId" />
 
                 <RadioButton
-                    android:id="@+id/radioButton_repos"
+                    android:id="@+id/radioButton_find_repos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Repositories" />

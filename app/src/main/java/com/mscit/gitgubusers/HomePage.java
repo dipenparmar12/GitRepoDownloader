@@ -17,6 +17,7 @@ public class HomePage extends AppCompatActivity {
 
     RadioGroup radioGroupSearchType;
     RadioButton selectedRadioButton;
+    RadioButton radioButton_find_repos, radioButton_find_users;
     Button btn_submit;
 
     Intent intent;
@@ -31,6 +32,8 @@ public class HomePage extends AppCompatActivity {
         btn_submit = findViewById(R.id.btn_submit);
 
         radioGroupSearchType = findViewById(R.id.radioGroup_search_type);
+        radioButton_find_users = findViewById(R.id.radioButton_find_users);
+        radioButton_find_repos = findViewById(R.id.radioButton_find_repos);
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,16 +42,15 @@ public class HomePage extends AppCompatActivity {
                 int radioButtonId = radioGroupSearchType.getCheckedRadioButtonId();
                 selectedRadioButton = findViewById(radioButtonId);
 
-                Log.e("dipen","HomePage Activity() QryText :"+editText_qry.getText().toString());
+                Log.e("dipen", "HomePage Activity() QryText :" + editText_qry.getText().toString());
 
-                if("ByUserId".equals(selectedRadioButton.getText().toString()) ){
+                if (selectedRadioButton.getId() == radioButton_find_users.getId()) {
                     intent = new Intent(getApplicationContext(), GitUserDetailActivity.class);
-                    intent.putExtra("textViewSearchQry",editText_qry.getText().toString());
+                    intent.putExtra("textViewSearchQry", editText_qry.getText().toString());
                     startActivity(intent);
-                }else{
+                } else {
                     intent = new Intent(getApplicationContext(), RepoSearchByQueryParaActivity.class);
-//                    intent = new Intent(getApplicationContext(), GitRepoDetailActivity.class);
-                    intent.putExtra("textViewSearchQry",editText_qry.getText().toString());
+                    intent.putExtra("textViewSearchQry", editText_qry.getText().toString());
                     startActivity(intent);
                 }
 

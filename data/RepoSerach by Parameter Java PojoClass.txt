@@ -10,7 +10,7 @@ public class Example {
 
 @SerializedName("total_count")
 @Expose
-private Integer totalCount;
+private Integer ReposFoundTotalCount;
 @SerializedName("incomplete_results")
 @Expose
 private Boolean incompleteResults;
@@ -19,11 +19,11 @@ private Boolean incompleteResults;
 private List<Item> GitRepoDetailArrayList = null;
 
 public Integer getTotalCount() {
-return totalCount;
+return ReposFoundTotalCount;
 }
 
-public void setTotalCount(Integer totalCount) {
-this.totalCount = totalCount;
+public void setTotalCount(Integer ReposFoundTotalCount) {
+this.ReposFoundTotalCount = ReposFoundTotalCount;
 }
 
 public Boolean getIncompleteResults() {
