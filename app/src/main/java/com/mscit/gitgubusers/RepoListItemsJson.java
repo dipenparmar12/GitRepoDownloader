@@ -13,7 +13,8 @@ public class RepoListItemsJson {
     @SerializedName("incomplete_results")
     @Expose
     private Boolean incompleteResults;
-    @SerializedName("GitRepoDetailArrayList")
+
+    @SerializedName("items") // KeyWord Convert to GitRepoDetailArrayList
     @Expose
     private ArrayList<GitRepoDetailJson> GitRepoDetailArrayList = null;
 

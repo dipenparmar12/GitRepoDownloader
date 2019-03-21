@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import javax.security.auth.login.LoginException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -67,6 +69,8 @@ public class RepoSearchByQueryParaActivity extends AppCompatActivity implements 
             } else {
 
                 RepoListItemsJson repoListItemsJson = (RepoListItemsJson) response.body();
+
+                Log.e(TAG, "RepoListItemJson:"+repoListItemsJson);
 
                 recyclerView = findViewById(R.id.recyclerViewGiUser);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
