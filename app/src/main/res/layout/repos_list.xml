@@ -3,26 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="13dp"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:paddingBottom="3dp">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="12dp">
 
             <TextView
-                android:layout_below="@id/btn_download_repo"
                 android:id="@+id/textViewTemp_reposList"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_download_repo" />
 
 
             <TextView
@@ -130,11 +130,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@id/btn_download_repo"
-                android:text="Owner:"
-                android:visibility="gone" />
+                android:text="Owner: " />
 
             <TextView
-                android:visibility="gone"
                 android:id="@+id/textView_login_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -150,9 +148,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@id/btn_download_repo"
-                android:text="123456"
+                android:layout_toRightOf="@id/textView_login_value"
+                android:text=""
                 android:textColor="@color/gray_dark"
-                android:textStyle="italic|bold" />
+                android:textStyle="italic|bold"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/btn_download_repo"

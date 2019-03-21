@@ -49,6 +49,7 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
         viewHolder.textView_Id.setText("Id: "+gitUserDetails.get(i).getId());
         viewHolder.textView_Name.setText(gitUserDetails.get(i).getName());
         viewHolder.textView_Full_name.setText(gitUserDetails.get(i).getFull_name());
+        viewHolder.textView_login_value.setText(gitUserDetails.get(i).getOwnerJson().getLogin());
         viewHolder.textView_Html_url.setText(gitUserDetails.get(i).getHtml_url());
         viewHolder.textView_Description.setText(gitUserDetails.get(i).getDescription());
         viewHolder.textView_Url.setText(gitUserDetails.get(i).getUrl());
@@ -98,7 +99,7 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
                 textView_Url,textView_Languages_url,textView_Contributors_url,textView_Created_at,
                 textView_Updated_at,textView_Git_url,textView_Clone_url,textView_Svn_url,textView_Homepage,
                 textView_Size,textView_Watchers_count,textView_Forks_count,textView_Archived,textView_Forks,
-                textView_Watchers,textView_Default_branch;
+                textView_Watchers,textView_Default_branch,textView_login_value;
 
         // onClick Event on Recycler View
         ArrayList<GitRepoDetailJson> gitRepoDetailJsons = new ArrayList<GitRepoDetailJson>();
@@ -121,6 +122,7 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
 
             textView_Id = (TextView) itemView.<View>findViewById(R.id.textView_Id);
             textView_Name = (TextView) itemView.<View>findViewById(R.id.textView_Name);
+            textView_login_value = (TextView) itemView.<View>findViewById(R.id.textView_login_value);
             textView_Full_name = (TextView) itemView.<View>findViewById(R.id.textView_Full_name);
             textView_Html_url = (TextView) itemView.<View>findViewById(R.id.textView_Html_url);
             textView_Description = (TextView) itemView.<View>findViewById(R.id.textView_Description);
