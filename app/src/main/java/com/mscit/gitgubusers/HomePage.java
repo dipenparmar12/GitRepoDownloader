@@ -27,6 +27,7 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         editText_qry = findViewById(R.id.editText_qry);
+
         btn_submit = findViewById(R.id.btn_submit);
 
         radioGroupSearchType = findViewById(R.id.radioGroup_search_type);

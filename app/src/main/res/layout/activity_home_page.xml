@@ -6,19 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".HomePage">
 
-    <TextView
-        android:id="@+id/textView_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:src="@drawable/giticon"
+        android:id="@+id/imageview_git_logo"
+        android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_margin="40dp"
-        android:text="GitHub"
-        android:textSize="53dp" />
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
     <android.support.v7.widget.CardView
         android:layout_width="300dp"
         android:layout_height="400dp"
-        android:layout_below="@id/textView_logo"
+        android:layout_below="@id/imageview_git_logo"
         android:layout_centerInParent="true">
 
         <RelativeLayout
@@ -41,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView_serach"
                 android:layout_weight="40"
+                android:maxLines="1"
                 android:text="Learn2Crack" />
 
             <!--nirajparmar68,dipenparmar12-->

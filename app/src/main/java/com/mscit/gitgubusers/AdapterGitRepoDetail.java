@@ -17,14 +17,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import javax.security.auth.login.LoginException;
 
 public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDetail.ViewHolder> {
 
     ArrayList<GitRepoDetail> gitUserDetails;
     Context context;
-
-
 
     public AdapterGitRepoDetail(ArrayList<GitRepoDetail> gitUserDetails, Context context) {
         this.gitUserDetails = gitUserDetails;
@@ -64,7 +61,7 @@ public class AdapterGitRepoDetail extends RecyclerView.Adapter<AdapterGitRepoDet
         viewHolder.textView_Clone_url.setText(gitUserDetails.get(i).getClone_url());
         viewHolder.textView_Svn_url.setText(gitUserDetails.get(i).getSvn_url());
         viewHolder.textView_Homepage.setText(gitUserDetails.get(i).getHomepage());
-        viewHolder.textView_Size.setText(gitUserDetails.get(i).getSize());
+        viewHolder.textView_Size.setText(gitUserDetails.get(i).getSize()+" KB");
         viewHolder.textView_Watchers_count.setText(gitUserDetails.get(i).getWatchers_count());
         viewHolder.textView_Forks_count.setText(gitUserDetails.get(i).getForks_count());
         viewHolder.textView_Archived.setText(gitUserDetails.get(i).getArchived());
